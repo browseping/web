@@ -137,11 +137,11 @@ const HeroSection = () => {
             )}
             
             <Link
-              href="/features"
+              href="/download"
               className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-900/20"
             >
-              <FiUsers size={20} className="group-hover:rotate-12 transition-transform" />
-              <span>Explore Features</span>
+              <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
+              <span>All Download Options</span>
             </Link>
           </div>
 

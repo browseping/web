@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { SiGooglechrome, SiFirefox, SiBrave } from 'react-icons/si';
+import { SiGooglechrome, SiFirefox, SiBrave, SiOpera } from 'react-icons/si';
 import { TbBrandEdge } from 'react-icons/tb';
 
 interface BrowserInfo {
@@ -42,6 +42,13 @@ const BrowserDetector = () => {
       downloadUrl: 'https://chrome.google.com/webstore/detail/browseping',
       storeUrl: 'Chrome Web Store',
       color: 'from-orange-600 to-yellow-500'
+    },
+    {
+      name: 'Opera',
+      icon: <SiOpera size={32} />,
+      downloadUrl: 'https://addons.opera.com/extensions/details/browseping',
+      storeUrl: 'Opera Add-ons',
+      color: 'from-red-500 to-pink-500'
     }
   ]);
 
@@ -56,6 +63,8 @@ const BrowserDetector = () => {
         return allBrowsers.find(b => b.name === 'Firefox');
       } else if (userAgent.includes('brave')) {
         return allBrowsers.find(b => b.name === 'Brave');
+      } else if (userAgent.includes('opr/') || userAgent.includes('opera')) {
+        return allBrowsers.find(b => b.name === 'Opera');
       } else if (userAgent.includes('chrome')) {
         return allBrowsers.find(b => b.name === 'Chrome');
       }
