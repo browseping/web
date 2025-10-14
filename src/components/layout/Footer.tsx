@@ -37,7 +37,7 @@ const Footer = () => {
                 { icon: FiGithub, href: 'https://github.com/browseping', label: 'GitHub' },
                 { icon: FiTwitter, href: 'https://x.com/BrowsePing', label: 'Twitter' },
                 { icon: FiLinkedin, href: 'http://linkedin.com/company/browseping', label: 'LinkedIn' },
-                { icon: FiMail, href: 'mailto:browseping@gmail.com', label: 'Email' },
+                { icon: FiMail, href: 'mailto:support@browseping.com', label: 'Email' },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -56,8 +56,8 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6 text-white">Quick Links</h3>
             <ul className="space-y-4">
               {[
-                { href: '/features', label: 'Features' },
                 { href: '/download', label: 'Download' },
+                { href: '/leaderboard', label: 'Leaderboard' },
                 { href: '/privacy', label: 'Privacy Policy' },
                 { href: '/terms', label: 'Terms of Service' },
               ].map((link) => (
@@ -81,8 +81,7 @@ const Footer = () => {
               {[
                 { href: '/help', label: 'Help Center' },
                 { href: '/contact', label: 'Contact Us' },
-                { href: '/about', label: 'About Us' },
-                { href: '/leaderboard', label: 'Leaderboard' },
+                { href: '/about', label: 'About Us' }
               ].map((link) => (
                 <li key={link.href}>
                   <Link 

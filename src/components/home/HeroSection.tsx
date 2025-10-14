@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FiDownload, FiUsers, FiBarChart, FiShield, FiChrome, FiArrowRight, FiZap } from 'react-icons/fi';
+import { FiDownload, FiUsers, FiBarChart, FiShield, FiChrome, FiArrowRight, FiZap, FiGithub, FiCode } from 'react-icons/fi';
 import BrowserDetector from '../../hooks/useBrowserDetector';
 
 const HeroSection = () => {
@@ -34,7 +34,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-20"
     >
       {/* Animated gradient background */}
       <div 
@@ -58,11 +58,13 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className={`inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-8 backdrop-blur-sm transition-all duration-1000 ${
+          <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 border border-green-500/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <FiZap className="text-blue-400" size={16} />
-            <span className="text-blue-300 text-sm font-medium">Revolutionary Browser Extension</span>
+            <FiGithub className="text-green-400" size={18} />
+            <span className="text-green-300 text-sm font-semibold">Open Source</span>
+            <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+            <span className="text-blue-300 text-sm font-medium">Browser Extension</span>
           </div>
 
           {/* Main Heading */}
@@ -83,7 +85,11 @@ const HeroSection = () => {
           <p className={`text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            Transform your solitary browsing into a{' '}
+            The{' '}
+            <span className="text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text font-bold">
+              open-source
+            </span>
+            {' '}browser extension that transforms your solitary browsing into a{' '}
             <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold">
               vibrant social experience
             </span>
@@ -95,8 +101,9 @@ const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             {[
+              { icon: FiGithub, text: 'Open Source', color: 'text-green-400' },
               { icon: FiUsers, text: 'Social Presence', color: 'text-blue-400' },
-              { icon: FiBarChart, text: 'Analytics', color: 'text-green-400' },
+              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-400' },
               { icon: FiShield, text: 'Privacy First', color: 'text-purple-400' }
             ].map((feature, index) => (
               <div key={index} className="flex items-center space-x-2 group cursor-pointer">
@@ -143,6 +150,16 @@ const HeroSection = () => {
               <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
               <span>All Download Options</span>
             </Link>
+
+            {/* <a
+              href="https://github.com/browseping"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-green-500/50 text-green-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-green-400 hover:text-green-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-green-900/10"
+            >
+              <FiGithub size={20} className="group-hover:rotate-12 transition-transform" />
+              <span>View Source Code</span>
+            </a> */}
           </div>
 
           {/* Browser Support */}
@@ -169,13 +186,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse" />
-        </div>
-      </div> */}
     </section>
   );
 };

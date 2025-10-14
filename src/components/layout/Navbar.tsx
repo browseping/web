@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX, FiDownload, FiUsers, FiBarChart, FiShield } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiUsers, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +19,6 @@ const Navbar = () => {
 
   const navItems = [
     { href: '/', label: 'Home', icon: null },
-    { href: '/features', label: 'Features', icon: <FiUsers size={16} /> },
     { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} /> },
     { href: '/leaderboard', label: 'Leaderboard', icon: <FiBarChart size={16} /> },
     { href: '/about', label: 'About Us', icon: null },
@@ -62,8 +61,17 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Download Button - Desktop */}
+          {/* Action Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
+            <a
+              href="https://github.com/browseping"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
+            >
+              <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" />
+              <span>Contribute</span>
+            </a>
             <Link
               href="/download"
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 relative overflow-hidden group"
@@ -100,6 +108,16 @@ const Navbar = () => {
                   <span>{item.label}</span>
                 </Link>
               ))}
+              <a
+                href="https://github.com/browseping"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <FiGithub size={16} />
+                <span>Contribute</span>
+              </a>
               <Link
                 href="/download"
                 className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-semibold mt-4"
