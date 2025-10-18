@@ -19,10 +19,10 @@ const Navbar = () => {
 
   const navItems = [
     { href: '/', label: 'Home', icon: null },
-    { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} /> },
     { href: '/leaderboard', label: 'Leaderboard', icon: <FiBarChart size={16} /> },
-    { href: '/about', label: 'About Us', icon: null },
-    { href: '/support', label: 'Support', icon: null },
+    { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} /> },
+    { href: '/terms', label: 'Terms', icon: null },
+    { href: '/contact', label: 'Contact', icon: null },
   ];
 
   return (
