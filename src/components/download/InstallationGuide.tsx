@@ -47,13 +47,13 @@ const InstallationGuide = () => {
       url: 'edge://extensions/',
       color: 'from-blue-600 to-cyan-500'
     },
-    {
-      id: 'firefox',
-      name: 'Firefox',
-      icon: <SiFirefox size={24} className="text-white" />,
-      url: 'about:debugging#/runtime/this-firefox',
-      color: 'from-orange-500 to-red-500'
-    },
+    // {
+    //   id: 'firefox',
+    //   name: 'Firefox',
+    //   icon: <SiFirefox size={24} className="text-white" />,
+    //   url: 'about:debugging#/runtime/this-firefox',
+    //   color: 'from-orange-500 to-red-500'
+    // },
     {
       id: 'opera',
       name: 'Opera',

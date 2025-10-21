@@ -33,7 +33,15 @@ const ZipDownload = () => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsDownloading(false);
-          // trigger actual download
+          
+          const downloadUrl = 'https://github.com/browseping/browser-extension/releases/download/v1.0.0/BrowsePing_V1.0.0.zip';
+          const link = document.createElement('a');
+          link.href = downloadUrl;
+          link.download = 'browseping-extension-v1.0.0.zip';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
           return 100;
         }
         return prev + 10;

@@ -38,20 +38,20 @@ const PlatformsList = () => {
       hover: 'hover:from-blue-600 hover:to-blue-700',
       available: true
     },
-    {
-      name: 'Firefox',
-      icon: <SiFirefox size={48} className="text-white" />,
-      description: 'Available on Firefox Add-ons',
-      url: 'https://addons.mozilla.org/firefox/addon/browseping',
-      color: 'from-orange-500 to-red-500',
-      hover: 'hover:from-orange-600 hover:to-red-600',
-      available: true
-    },
+    // {
+    //   name: 'Firefox',
+    //   icon: <SiFirefox size={48} className="text-white" />,
+    //   description: 'Available on Firefox Add-ons',
+    //   url: 'https://addons.mozilla.org/firefox/addon/browseping',
+    //   color: 'from-orange-500 to-red-500',
+    //   hover: 'hover:from-orange-600 hover:to-red-600',
+    //   available: true
+    // },
     {
       name: 'Edge',
       icon: <TbBrandEdge size={48} className="text-white" />,
       description: 'Available on Microsoft Edge Add-ons',
-      url: 'https://microsoftedge.microsoft.com/addons/detail/browseping',
+      url: 'https://microsoftedge.microsoft.com/addons/detail/browseping/jhdfmcopfogjnbapgfgddjiokgkllgpa',
       color: 'from-blue-600 to-cyan-500',
       hover: 'hover:from-blue-700 hover:to-cyan-600',
       available: true

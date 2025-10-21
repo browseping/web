@@ -32,7 +32,7 @@ const BrowserDetector = () => {
     {
       name: 'Edge',
       icon: <TbBrandEdge size={32} />,
-      downloadUrl: 'https://microsoftedge.microsoft.com/addons/detail/browseping',
+      downloadUrl: 'https://microsoftedge.microsoft.com/addons/detail/browseping/jhdfmcopfogjnbapgfgddjiokgkllgpa',
       storeUrl: 'Edge Add-ons',
       color: 'from-blue-600 to-cyan-500'
     },
