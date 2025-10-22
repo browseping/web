@@ -33,7 +33,7 @@ const PlatformsList = () => {
       name: 'Chrome',
       icon: <SiGooglechrome size={48} className="text-white" />,
       description: 'Available on Chrome Web Store',
-      url: 'https://chrome.google.com/webstore/detail/browseping',
+      url: 'https://chromewebstore.google.com/detail/browseping/lkcmcldjgmbojnhepnhegkmddfempmcd',
       color: 'from-blue-500 to-blue-600',
       hover: 'hover:from-blue-600 hover:to-blue-700',
       available: true
@@ -60,7 +60,7 @@ const PlatformsList = () => {
       name: 'Brave',
       icon: <SiBrave size={48} className="text-white" />,
       description: 'Uses Chrome Web Store',
-      url: 'https://chrome.google.com/webstore/detail/browseping',
+      url: 'https://chromewebstore.google.com/detail/browseping/lkcmcldjgmbojnhepnhegkmddfempmcd',
       color: 'from-orange-600 to-yellow-500',
       hover: 'hover:from-orange-700 hover:to-yellow-600',
       available: true
@@ -69,7 +69,7 @@ const PlatformsList = () => {
       name: 'Opera',
       icon: <SiOpera size={48} className="text-white" />,
       description: 'Available on Opera Add-ons',
-      url: 'https://addons.opera.com/en/',
+      url: 'https://chromewebstore.google.com/detail/browseping/lkcmcldjgmbojnhepnhegkmddfempmcd',
       color: 'from-red-500 to-pink-500',
       hover: 'hover:from-red-600 hover:to-pink-600',
       available: true

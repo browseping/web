@@ -18,7 +18,7 @@ const BrowserDetector = () => {
     {
       name: 'Chrome',
       icon: <SiGooglechrome size={32} />,
-      downloadUrl: 'https://chrome.google.com/webstore/detail/browseping',
+      downloadUrl: 'https://chromewebstore.google.com/detail/browseping/lkcmcldjgmbojnhepnhegkmddfempmcd',
       storeUrl: 'Chrome Web Store',
       color: 'from-blue-500 to-blue-600'
     },
@@ -39,14 +39,14 @@ const BrowserDetector = () => {
     {
       name: 'Brave',
       icon: <SiBrave size={32} />,
-      downloadUrl: 'https://chrome.google.com/webstore/detail/browseping',
+      downloadUrl: 'https://chromewebstore.google.com/detail/browseping/lkcmcldjgmbojnhepnhegkmddfempmcd',
       storeUrl: 'Chrome Web Store',
       color: 'from-orange-600 to-yellow-500'
     },
     {
       name: 'Opera',
       icon: <SiOpera size={32} />,
-      downloadUrl: 'https://addons.opera.com/extensions/details/browseping',
+      downloadUrl: 'https://chromewebstore.google.com/detail/browseping/lkcmcldjgmbojnhepnhegkmddfempmcd',
       storeUrl: 'Opera Add-ons',
       color: 'from-red-500 to-pink-500'
     }
