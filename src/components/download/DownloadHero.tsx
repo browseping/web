@@ -49,7 +49,7 @@ const DownloadHero = () => {
           </p>
 
           {/* Feature highlights */}
-          <div className={`flex flex-wrap justify-center gap-6 mb-12 transition-all duration-1000 delay-700 ${
+          <div className={`flex flex-wrap justify-center gap-6 mb-8 transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             {[
@@ -64,6 +64,27 @@ const DownloadHero = () => {
                 <span className="text-gray-300 group-hover:text-white transition-colors">{feature.text}</span>
               </div>
             ))}
+          </div>
+
+          {/* Product Hunt Badge */}
+          <div className={`flex justify-center mb-12 transition-all duration-1000 delay-900 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <a 
+              href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:scale-105 transition-transform duration-300 group"
+            >
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
+                alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
+                style={{ width: '250px', height: '54px' }} 
+                width="250" 
+                height="54" 
+                className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
+              />
+            </a>
           </div>
         </div>
       </div>

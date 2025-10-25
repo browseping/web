@@ -32,6 +32,26 @@ const Footer = () => {
               Transform your solitary browsing into a vibrant social experience. Connect with friends, 
               share your digital presence, and discover what's capturing everyone's attention across the web.
             </p>
+            
+            {/* Product Hunt Badge */}
+            <div className="mb-6">
+              <a 
+                href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block hover:scale-105 transition-transform duration-300"
+              >
+                <img 
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
+                  alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
+                  style={{ width: '250px', height: '54px' }} 
+                  width="250" 
+                  height="54" 
+                  className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                />
+              </a>
+            </div>
+            
             <div className="flex space-x-6">
               {[
                 { icon: FiGithub, href: 'https://github.com/browseping', label: 'GitHub' },

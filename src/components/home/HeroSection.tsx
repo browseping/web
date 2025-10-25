@@ -150,16 +150,27 @@ const HeroSection = () => {
               <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
               <span>All Download Options</span>
             </Link>
+          </div>
 
-            {/* <a
-              href="https://github.com/browseping"
-              target="_blank"
+          {/* Product Hunt Badge */}
+          <div className={`flex justify-center mb-12 transition-all duration-1000 delay-1200 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <a 
+              href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping" 
+              target="_blank" 
               rel="noopener noreferrer"
-              className="border-2 border-green-500/50 text-green-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-green-400 hover:text-green-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-green-900/10"
+              className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-              <FiGithub size={20} className="group-hover:rotate-12 transition-transform" />
-              <span>View Source Code</span>
-            </a> */}
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
+                alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
+                style={{ width: '250px', height: '54px' }} 
+                width="250" 
+                height="54" 
+                className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-gray-600/50"
+              />
+            </a>
           </div>
 
           {/* Browser Support */}

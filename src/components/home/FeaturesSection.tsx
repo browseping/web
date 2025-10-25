@@ -314,6 +314,38 @@ const FeaturesSection = () => {
           </div>
         </div>
 
+        {/* Product Hunt Badge Section */}
+        <div className="text-center mt-16 mb-16">
+          <div className="mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+                Featured on Product Hunt
+              </span>
+            </h3>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Show your support and help us reach more users by upvoting BrowsePing on Product Hunt!
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <a 
+              href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block hover:scale-105 transition-transform duration-300 group"
+            >
+              <img 
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
+                alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
+                style={{ width: '250px', height: '54px' }} 
+                width="250" 
+                height="54" 
+                className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
+              />
+            </a>
+          </div>
+        </div>
+
         {/* Open Source Call to Action */}
         <div className="text-center mt-16">
           <div className="relative max-w-5xl mx-auto">
