@@ -8,9 +8,11 @@ export const metadata: Metadata = {
   title: "BrowsePing - Socialize Your Browsing Experience",
   description:
     "Transform your solitary browsing into a vibrant social experience. Connect with friends, share your digital presence, and discover what's capturing everyone's attention across the web.",
-  keywords:
-    "browser extension, social browsing, friends, analytics, privacy, Chrome extension",
-  authors: [{ name: "BrowsePing Team" }],
+  keywords: ["BrowsePing", "browser extension", "social browsing", "share browsing", "browser social", "browsing insights", "chrome extension"],
+  authors: [{ name: "BrowsePing" }],
+  icons: {
+    icon: "/browseping.svg",
+  }
 };
 
 export const viewport: Viewport = {
