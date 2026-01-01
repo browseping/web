@@ -96,33 +96,33 @@ const FeaturesSection = () => {
   const secondRow = [...features.slice(5), ...features.slice(5)];
 
   const FeatureCard = ({ feature }: { feature: any }) => (
-    <div className="w-[350px] sm:w-[400px] flex-shrink-0 mx-4">
-      <div className="h-full bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-2xl border border-gray-700/50 rounded-3xl p-6 sm:p-8 hover:border-gray-500/50 transition-all duration-500 group relative overflow-hidden">
+    <div className="w-[280px] sm:w-[350px] md:w-[400px] flex-shrink-0 mx-3 sm:mx-4">
+      <div className="h-full bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-2xl border border-gray-700/50 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-gray-500/50 transition-all duration-500 group relative overflow-hidden">
         <div className="relative z-10">
-          <div className="flex items-center justify-between mb-6">
-            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-              <div className="text-white scale-110">
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
+            <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+              <div className="text-white scale-90 sm:scale-110">
                 {feature.icon}
               </div>
             </div>
-            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider bg-gray-700/30 px-3 py-1 rounded-full">
+            <span className="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-wider bg-gray-700/30 px-2 sm:px-3 py-1 rounded-full">
               {feature.category}
             </span>
           </div>
 
-          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+          <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-400 transition-colors">
             {feature.title}
           </h3>
           
-          <p className="text-gray-300 leading-relaxed mb-6 line-clamp-2">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 line-clamp-2">
             {feature.detailedDescription}
           </p>
 
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {feature.benefits.slice(0, 2).map((benefit: string, idx: number) => (
               <div key={idx} className="flex items-center space-x-2">
-                <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${feature.gradient}`}></div>
-                <span className="text-sm text-gray-400 font-medium">{benefit}</span>
+                <div className={`w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-gradient-to-r ${feature.gradient}`}></div>
+                <span className="text-xs sm:text-sm text-gray-400 font-medium">{benefit}</span>
               </div>
             ))}
           </div>
@@ -143,20 +143,20 @@ const FeaturesSection = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full px-8 py-4 mb-8 backdrop-blur-sm">
-            <FiGithub className="text-blue-400" size={24} />
-            <span className="text-blue-300 font-semibold text-lg">Open Source</span>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-20">
+          <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full px-4 sm:px-8 py-2 sm:py-4 mb-6 sm:mb-8 backdrop-blur-sm">
+            <FiGithub className="text-blue-400" size={18} />
+            <span className="text-blue-300 font-semibold text-sm sm:text-lg">Open Source</span>
+            <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
           </div>
           
-          <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
             <span className="text-white">The Future of </span>
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Social Browsing
             </span>
           </h2>
-          <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4">
             BrowsePing transforms your browsing into a{' '}
             <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold">
               vibrant social experience
@@ -165,7 +165,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Infinite Scroll Section */}
-        <div className="space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           {/* First Row */}
           <div className="flex overflow-hidden group">
             <div className="flex animate-marquee hover:[animation-play-state:paused]">
