@@ -1,0 +1,83 @@
+name: UI/UX Improvement
+description: Suggest improvements to the user interface or user experience
+title: "[UI/UX] "
+labels: ["enhancement", "ui/ux"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve the BrowsePing website experience! Please describe your UI/UX suggestion below.
+
+  - type: textarea
+    id: current-design
+    attributes:
+      label: Current Design/Experience
+      description: Describe the current UI/UX that you think could be improved
+      placeholder: What currently exists and what's wrong with it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed Improvement
+      description: Describe how you would like the UI/UX to be improved
+      placeholder: What would make it better?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which Page/Section?
+      description: Where on the website is this improvement needed?
+      options:
+        - Homepage
+        - About Page
+        - Leaderboard
+        - Contact Page
+        - Help/Documentation
+        - Navigation/Menu
+        - Footer
+        - All Pages (Global)
+        - Other/Multiple Pages
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups or Examples
+      description: If applicable, add mockups, screenshots, or examples from other websites
+      placeholder: Drag and drop images or paste URLs here
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: User Impact
+      description: How much would this improvement impact users?
+      options:
+        - Minor enhancement
+        - Moderate improvement
+        - Major usability issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-benefit
+    attributes:
+      label: User Benefit
+      description: How would this improvement benefit users?
+      placeholder: Explain the value to users...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I have searched existing issues for similar suggestions
+          required: true
+        - label: This is focused on UI/UX (not a new feature request)
+          required: true

@@ -1,0 +1,78 @@
+name: Content/Documentation Issue
+description: Report content errors or suggest documentation improvements
+title: "[CONTENT] "
+labels: ["documentation", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve the BrowsePing website content and documentation!
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of content issue is this?
+      options:
+        - Typo/Grammar error
+        - Incorrect/Outdated information
+        - Missing information
+        - Unclear explanation
+        - Broken link
+        - Documentation improvement
+        - Content suggestion
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: page-affected
+    attributes:
+      label: Affected Page/Section
+      options:
+        - Homepage
+        - About Page
+        - Help/Documentation
+        - Privacy Policy
+        - Terms of Service
+        - Contact Page
+        - README.md
+        - CONTRIBUTING.md
+        - Other documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content
+      description: Quote or describe the current content that needs improvement
+      placeholder: What's currently written...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-content
+    attributes:
+      label: Proposed Content/Fix
+      description: How should the content be improved or what should be added?
+      placeholder: Your suggested content or fix...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: Additional details, sources, references...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I have verified the content issue exists
+          required: true
+        - label: I have checked this isn't already being addressed
+          required: true
