@@ -26,23 +26,14 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: page
     attributes:
-      label: Which Page/Section?
+      label: Which Page/Section? (Optional)
       description: Where on the website is this improvement needed?
-      options:
-        - Homepage
-        - About Page
-        - Leaderboard
-        - Contact Page
-        - Help/Documentation
-        - Navigation/Menu
-        - Footer
-        - All Pages (Global)
-        - Other/Multiple Pages
+      placeholder: e.g., Homepage, Contact page, Navigation menu, All pages
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: mockups
@@ -54,23 +45,23 @@ body:
   - type: dropdown
     id: priority
     attributes:
-      label: User Impact
+      label: User Impact (Optional)
       description: How much would this improvement impact users?
       options:
         - Minor enhancement
         - Moderate improvement
         - Major usability issue
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: user-benefit
     attributes:
-      label: User Benefit
+      label: User Benefit (Optional)
       description: How would this improvement benefit users?
       placeholder: Explain the value to users...
     validations:
-      required: true
+      required: false
 
   - type: checkboxes
     id: checklist
@@ -80,4 +71,4 @@ body:
         - label: I have searched existing issues for similar suggestions
           required: true
         - label: This is focused on UI/UX (not a new feature request)
-          required: true
+          required: false

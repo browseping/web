@@ -25,22 +25,14 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: page-affected
     attributes:
-      label: Affected Page/Section
-      options:
-        - Homepage
-        - About Page
-        - Help/Documentation
-        - Privacy Policy
-        - Terms of Service
-        - Contact Page
-        - README.md
-        - CONTRIBUTING.md
-        - Other documentation
+      label: Affected Page/Section (Optional)
+      description: Which page, file, or documentation has the content issue?
+      placeholder: e.g., README.md, Privacy Policy, Homepage
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: current-content
@@ -72,7 +64,7 @@ body:
     attributes:
       label: Before Submitting
       options:
+        - label: I have searched for similar content issues
+          required: true
         - label: I have verified the content issue exists
-          required: true
-        - label: I have checked this isn't already being addressed
-          required: true
+          required: false

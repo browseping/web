@@ -20,16 +20,16 @@ body:
   - type: textarea
     id: use-case
     attributes:
-      label: Use Case
+      label: Use Case (Optional)
       description: Why would this feature be useful? Describe the problem it solves or the benefit it provides
       placeholder: Explain why this feature is needed...
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: feature-category
     attributes:
-      label: Feature Category
+      label: Feature Category (Optional)
       description: What category does this feature fall under?
       options:
         - New Page/Section
@@ -42,16 +42,16 @@ body:
         - Analytics/Metrics
         - Other
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: proposed-solution
     attributes:
-      label: Proposed Solution
+      label: Proposed Solution (Optional)
       description: Describe how you would like this feature to work. Be as detailed as possible
       placeholder: How should this work?
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: alternative-solutions
@@ -77,14 +77,14 @@ body:
   - type: dropdown
     id: impact
     attributes:
-      label: Impact
+      label: Impact (Optional)
       description: How would this feature impact the website?
       options:
         - Minor enhancement
         - Moderate improvement
         - Major feature
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: additional-context
@@ -101,9 +101,7 @@ body:
       options:
         - label: I've searched existing issues for similar requests
           required: true
-        - label: This is not a duplicate of an existing feature request
-          required: true
         - label: I understand this may take time to implement
-          required: true
+          required: false
         - label: I'm open to contributing this feature myself
           required: false

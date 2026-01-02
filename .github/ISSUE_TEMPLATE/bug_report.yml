@@ -17,29 +17,19 @@ body:
     validations:
       required: true
 
-  - type: dropdown
+  - type: input
     id: page-affected
     attributes:
-      label: Affected Page/Section
-      description: Where on the website did you encounter this bug?
-      options:
-        - Homepage
-        - About Page
-        - Leaderboard
-        - Contact Page
-        - Help/Documentation
-        - Privacy Policy
-        - Terms of Service
-        - Navigation/Menu
-        - Footer
-        - Other/Multiple Pages
+      label: Affected Page/Section (Optional)
+      description: Where did you encounter this bug? (e.g., Homepage, Contact page, CLI/build process, etc.)
+      placeholder: e.g., Homepage, npm run lint, Contact form
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to Reproduce
+      label: Steps to Reproduce (Optional)
       description: Provide detailed steps to reproduce the behavior
       placeholder: |
         1. Go to '...'
@@ -47,25 +37,25 @@ body:
         3. Scroll down to '...'
         4. See error
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected-behavior
     attributes:
-      label: Expected Behavior
+      label: Expected Behavior (Optional)
       description: Describe what you expected to happen
       placeholder: What should have happened?
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: actual-behavior
     attributes:
-      label: Actual Behavior
+      label: Actual Behavior (Optional)
       description: Describe what actually happened instead
       placeholder: What actually happened?
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: screenshots
@@ -77,9 +67,10 @@ body:
   - type: dropdown
     id: browser
     attributes:
-      label: Browser
-      description: Which browser are you using?
+      label: Browser (Optional)
+      description: Which browser are you using? Select None if not applicable (e.g., CLI/build errors)
       options:
+        - None / Not applicable
         - Chrome
         - Firefox
         - Safari
@@ -88,33 +79,34 @@ body:
         - Opera
         - Other
     validations:
-      required: true
+      required: false
 
   - type: input
     id: browser-version
     attributes:
-      label: Browser Version
+      label: Browser Version (Optional)
       description: What version of the browser are you using?
       placeholder: e.g., 120.0.0.0
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: device
     attributes:
-      label: Device Type
-      description: What device are you using?
+      label: Device Type (Optional)
+      description: What device are you using? (Skip if not applicable)
       options:
+        - None / Not applicable
         - Desktop/Laptop
         - Mobile Phone
         - Tablet
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: operating-system
     attributes:
-      label: Operating System
+      label: Operating System (Optional)
       description: Which OS are you using?
       options:
         - Windows 11
@@ -129,7 +121,7 @@ body:
         - Android
         - Other
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: console-errors
@@ -156,5 +148,5 @@ body:
           required: true
         - label: This is not a security vulnerability (I understand I should use SECURITY.md for that)
           required: true
-        - label: I have provided clear reproduction steps
-          required: true
+        - label: I have provided enough information to understand the issue
+          required: false

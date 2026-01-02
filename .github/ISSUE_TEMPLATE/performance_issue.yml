@@ -20,7 +20,7 @@ body:
   - type: dropdown
     id: issue-type
     attributes:
-      label: Type of Performance Issue
+      label: Type of Performance Issue (Optional)
       description: What kind of performance problem is this?
       options:
         - Slow page loading
@@ -33,28 +33,21 @@ body:
         - Unoptimized images
         - Other
     validations:
-      required: true
+      required: false
 
-  - type: dropdown
+  - type: input
     id: page-affected
     attributes:
-      label: Affected Page/Section
+      label: Affected Page/Section (Optional)
       description: Where are you experiencing this performance issue?
-      options:
-        - Homepage
-        - About Page
-        - Leaderboard
-        - Contact Page
-        - Help/Documentation
-        - All Pages
-        - Other/Multiple Pages
+      placeholder: e.g., Homepage, Leaderboard, All pages
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: frequency
     attributes:
-      label: How Often Does This Occur?
+      label: How Often Does This Occur? (Optional)
       description: How frequently do you experience this issue?
       options:
         - Always/Every time
@@ -62,7 +55,7 @@ body:
         - Sometimes (occasionally)
         - Rarely
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: performance-metrics
@@ -77,20 +70,22 @@ body:
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to Reproduce
+      label: Steps to Reproduce (Optional)
       description: How can we reproduce this performance issue?
       placeholder: |
         1. Navigate to ...
         2. Scroll to ...
         3. Notice slow loading...
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: browser
     attributes:
-      label: Browser
+      label: Browser (Optional)
+      description: Select None if not applicable
       options:
+        - None / Not applicable
         - Chrome
         - Firefox
         - Safari
@@ -99,23 +94,23 @@ body:
         - Opera
         - Other
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: device
     attributes:
-      label: Device Type
+      label: Device Type (Optional)
       options:
         - Desktop/Laptop
         - Mobile Phone
         - Tablet
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: connection-speed
     attributes:
-      label: Internet Connection Speed
+      label: Internet Connection Speed (Optional)
       description: What's your approximate internet speed?
       options:
         - Fast (50+ Mbps)
@@ -123,7 +118,7 @@ body:
         - Slow (< 10 Mbps)
         - Unknown
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: suggested-fix
@@ -140,6 +135,6 @@ body:
         - label: I have searched existing issues for similar performance problems
           required: true
         - label: This issue is specifically about performance (not general bugs)
-          required: true
+          required: false
         - label: I have tested on a stable internet connection
           required: false

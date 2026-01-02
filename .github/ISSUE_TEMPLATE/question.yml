@@ -22,11 +22,11 @@ body:
   - type: textarea
     id: context
     attributes:
-      label: Context
+      label: Context (Optional)
       description: Provide any relevant context or background information
       placeholder: Additional details that might help us answer your question...
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: tried
@@ -46,4 +46,4 @@ body:
         - label: I have searched existing issues and discussions
           required: true
         - label: I have checked the documentation (README, CONTRIBUTING, etc.)
-          required: true
+          required: false
