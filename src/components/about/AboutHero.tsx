@@ -40,14 +40,14 @@ const AboutHero = () => {
             </span>
           </h1>
 
-          <p className={`text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
+          <p className={`text-xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             BrowsePing was born from a simple idea: browsing the web shouldn&apos;t be a lonely activity. 
             We&apos;re building a bridge between the digital world and social connection.
           </p>
 
-          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto transition-all duration-1000 delay-900 ${
+          {/* <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto transition-all duration-1000 delay-900 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             {[
@@ -63,7 +63,7 @@ const AboutHero = () => {
                 <div className="text-gray-400 text-sm">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

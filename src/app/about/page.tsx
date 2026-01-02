@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import AboutHero from '@/components/about/AboutHero';
-import AboutMission from '@/components/about/AboutMission';
 import AboutValues from '@/components/about/AboutValues';
 import Link from 'next/link';
 import { FiArrowRight, FiGithub } from 'react-icons/fi';
@@ -15,7 +14,6 @@ export default function AboutPage() {
   return (
     <Layout>
       <AboutHero />
-      <AboutMission />
       <AboutValues />
       
       {/* Join Us Section */}
