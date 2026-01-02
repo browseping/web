@@ -12,7 +12,7 @@ const DownloadHero = () => {
   }, []);
 
   return (
-    <section className="min-h-[90vh] bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-8">
+    <section className="min-h-[70vh] bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-20">
       {/* Animated background elements */}
       <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60" />
       <div className="absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-40" />
