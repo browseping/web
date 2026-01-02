@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { FiDownload, FiZap, FiCode, FiGlobe } from 'react-icons/fi';
 
@@ -67,7 +68,7 @@ const DownloadHero = () => {
           </div>
 
           {/* Product Hunt Badge */}
-          <div className={`flex justify-center mb-12 transition-all duration-1000 delay-900 ${
+          <div className={`flex justify-center mb-8 transition-all duration-1000 delay-900 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <a 
@@ -76,7 +77,7 @@ const DownloadHero = () => {
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-              <img 
+              <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
                 style={{ width: '250px', height: '54px' }} 
