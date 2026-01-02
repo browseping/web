@@ -1,8 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { FiMenu, FiX, FiDownload, FiUsers, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import {
+  FiMenu,
+  FiX,
+  FiDownload,
+  FiUsers,
+  FiBarChart,
+  FiShield,
+  FiGithub,
+} from "react-icons/fi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,24 +21,30 @@ const Navbar = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { href: '/', label: 'Home', icon: null },
-    { href: '/leaderboard', label: 'Leaderboard', icon: <FiBarChart size={16} /> },
-    { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} /> },
-    { href: '/terms', label: 'Terms', icon: null },
-    { href: '/contact', label: 'Contact', icon: null },
+    { href: "/", label: "Home", icon: null },
+    {
+      href: "/leaderboard",
+      label: "Leaderboard",
+      icon: <FiBarChart size={16} />,
+    },
+    { href: "/privacy", label: "Privacy", icon: <FiShield size={16} /> },
+    { href: "/terms", label: "Terms", icon: null },
+    { href: "/contact", label: "Contact", icon: null },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-gray-900/95 backdrop-blur-lg border-b border-gray-800' 
-        : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+        scrolled
+          ? "bg-gray-900/95 backdrop-blur-lg border-b border-gray-800"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -42,7 +56,9 @@ const Navbar = () => {
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 BrowsePing
               </span>
-              <div className="text-xs text-gray-400 -mt-1">Socialize Your Browsing</div>
+              <div className="text-xs text-gray-400 -mt-1">
+                Socialize Your Browsing
+              </div>
             </div>
           </Link>
 
@@ -69,16 +85,24 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
             >
-              <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" />
+              <FiGithub
+                size={16}
+                className="group-hover:scale-110 transition-transform duration-300"
+              />
               <span>Contribute</span>
             </a>
             <Link
               href="/download"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 relative overflow-hidden group"
+              className="relative inline-flex items-center px-6 py-2 rounded-xl font-semibold text-white transition-all duration-300 shadow-lg overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <FiDownload size={16} className="relative z-10" />
-              <span className="relative z-10">Download</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-600"></span>
+
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+              <span className="relative z-10 flex items-center space-x-2">
+                <FiDownload size={16} />
+                <span>Download</span>
+              </span>
             </Link>
           </div>
 
