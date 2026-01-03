@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { FiGithub, FiMail, FiGlobe, FiHeart, FiTwitter, FiLinkedin } from 'react-icons/fi';
+import Image from 'next/image';
+import { FiGithub, FiMail, FiHeart, FiTwitter, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,7 +31,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed text-lg">
               Transform your solitary browsing into a vibrant social experience. Connect with friends, 
-              share your digital presence, and discover what's capturing everyone's attention across the web.
+              share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
             </p>
             
             {/* Product Hunt Badge */}
@@ -41,12 +42,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-block hover:scale-105 transition-transform duration-300"
               >
-                <img 
+                <Image 
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
                   alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                  style={{ width: '250px', height: '54px' }} 
-                  width="250" 
-                  height="54" 
+                  width={250} 
+                  height={54} 
                   className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
               </a>

@@ -1,16 +1,15 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FiDownload, FiExternalLink, FiGlobe } from 'react-icons/fi';
-import { SiGooglechrome, SiFirefox, SiBrave, SiOpera } from 'react-icons/si';
+import { SiGooglechrome, SiBrave, SiOpera } from 'react-icons/si';
 import { TbBrandEdge } from 'react-icons/tb';
 import BrowserDetector from '../../hooks/useBrowserDetector';
 
 const PlatformsList = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { detectedBrowser, allBrowsers } = BrowserDetector();
+  const { detectedBrowser } = BrowserDetector();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -117,7 +116,7 @@ const PlatformsList = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">Install for {detectedPlatform.name}</h3>
                   <p className="text-gray-300 mb-6">
-                    We've detected you're using {detectedPlatform.name}. Get the best experience by installing BrowsePing directly from the official store.
+                    We&apos;ve detected you&apos;re using {detectedPlatform.name}. Get the best experience by installing BrowsePing directly from the official store.
                   </p>
                   <Link
                     href={detectedPlatform.url}

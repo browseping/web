@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { FiTrendingUp, FiClock, FiUser, FiRefreshCw, FiAward } from 'react-icons/fi';
+import { FiClock, FiUser, FiRefreshCw, FiAward } from 'react-icons/fi';
 
 interface LeaderboardUser {
   rank: number;
@@ -55,8 +55,9 @@ const PublicLeaderboard = () => {
           totalUsers: 0
         });
       }
-    } catch (err: any) {
-      console.log('Leaderboard API Error:', err.message);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
+      console.log('Leaderboard API Error:', errorMessage);
       setError('Server is not available.');
       setData({
         month: new Date().toISOString().slice(0, 7),
@@ -128,7 +129,7 @@ const PublicLeaderboard = () => {
             Community Leaderboard
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            See who's leading the pack in social browsing this month
+            See who&apos;s leading the pack in social browsing this month
           </p>
         </div>
 
@@ -178,7 +179,7 @@ const PublicLeaderboard = () => {
 
               {/* Leaderboard entries */}
               <div className="divide-y divide-gray-700">
-                {data.leaderboard.map((user, index) => (
+                {data.leaderboard.map((user) => (
                   <div
                     key={user.userId}
                     className="px-6 py-4 hover:bg-gray-800/30 transition-colors group"
