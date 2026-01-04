@@ -75,7 +75,7 @@ const TermsOfService = () => {
                 <li>• Friend networks and discovery</li>
               </ul>
               <p>
-                All social features are optional and controlled by user privacy settings. The service is provided "as is" without warranties.
+                All social features are optional and controlled by user privacy settings. The service is provided &quot;as is&quot; without warranties.
               </p>
             </div>
           </div>
@@ -229,7 +229,7 @@ const TermsOfService = () => {
             <h2 className="text-2xl font-bold text-white mb-6">9. Limitation of Liability</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                BrowsePing is provided "as is" without warranties. We are not liable for:
+                BrowsePing is provided &quot;as is&quot; without warranties. We are not liable for:
               </p>
               <ul className="space-y-2 ml-6">
                 <li>• Data loss or corruption</li>

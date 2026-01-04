@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { FiChevronRight, FiSettings, FiToggleRight, FiUpload, FiFolder, FiCheckCircle, FiMapPin } from 'react-icons/fi';
-import { SiGooglechrome, SiFirefox, SiBrave, SiOpera } from 'react-icons/si';
+import { SiGooglechrome, SiBrave, SiOpera } from 'react-icons/si';
 import { TbBrandEdge } from 'react-icons/tb';
 
 const InstallationGuide = () => {

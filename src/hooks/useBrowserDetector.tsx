@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { SiGooglechrome, SiFirefox, SiBrave, SiOpera } from 'react-icons/si';
+import { SiGooglechrome, SiBrave, SiOpera } from 'react-icons/si';
 import { TbBrandEdge } from 'react-icons/tb';
 
 interface BrowserInfo {

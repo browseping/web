@@ -240,7 +240,7 @@ const PrivacyPolicy = () => {
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Questions About Privacy?</h2>
             <p className="text-blue-300 mb-6">
-              We're here to help. Contact us for any privacy-related questions or concerns.
+              We&apos;re here to help. Contact us for any privacy-related questions or concerns.
             </p>
             <a
               href="/contact"

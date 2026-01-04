@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX, FiDownload, FiUsers, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
