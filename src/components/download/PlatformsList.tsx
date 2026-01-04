@@ -78,30 +78,27 @@ const PlatformsList = () => {
   // Filter platforms based on detected browser
   const detectedPlatform = detectedBrowser ? platforms.find(p => p.name === detectedBrowser.name) : null;
   const otherPlatforms = platforms.filter(p => !detectedBrowser || p.name !== detectedBrowser.name);
-  
+
   return (
     <section id="platforms-section" className="py-20 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Choose Your Browser
             </span>
           </h2>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <p className={`text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             BrowsePing is available for all major browsers. Click on your browser to install directly from the official store.
           </p>
         </div>
-        
+
         {/* Featured Browser */}
         {detectedPlatform && (
-          <div className={`mb-12 transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <div className={`mb-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             <div className="bg-gray-800/60 border border-gray-700/50 rounded-2xl p-8 backdrop-blur-sm shadow-xl">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-shrink-0">
@@ -135,22 +132,21 @@ const PlatformsList = () => {
         )}
 
         {/* Other Browsers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid items-center justify-between grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {otherPlatforms.map((platform, index) => (
             <div
               key={platform.name}
-              className={`group transition-all duration-1000 delay-${(index + 1) * 200} ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
+              className={`group transition-all duration-1000 delay-${(index + 1) * 200} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
             >
               <Link
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block p-6 rounded-2xl bg-gradient-to-br ${platform.color} ${platform.hover} transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}
+                className={`block h-[300px] p-6 rounded-2xl bg-gradient-to-br ${platform.color} ${platform.hover} transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}
               >
-                <div className="text-center">
-                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-center flex flex-col justify-between h-full">
+                  <div className="mb-4">
                     {platform.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">{platform.name}</h3>
@@ -167,9 +163,8 @@ const PlatformsList = () => {
         </div>
 
         {/* Alternative installation notice */}
-        <div className={`mt-16 text-center transition-all duration-1000 delay-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`mt-16 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 max-w-2xl mx-auto">
             <FiGlobe className="text-blue-400 mx-auto mb-4" size={32} />
             <h3 className="text-xl font-semibold text-white mb-2">Prefer Manual Installation?</h3>

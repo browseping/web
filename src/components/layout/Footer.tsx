@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -33,12 +33,12 @@ const Footer = () => {
               Transform your solitary browsing into a vibrant social experience. Connect with friends, 
               share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
             </p>
-            
+
             {/* Product Hunt Badge */}
             <div className="mb-6">
-              <a 
-                href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping" 
-                target="_blank" 
+              <a
+                href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block hover:scale-105 transition-transform duration-300"
               >
@@ -51,7 +51,7 @@ const Footer = () => {
                 />
               </a>
             </div>
-            
+
             <div className="flex space-x-6">
               {[
                 { icon: FiGithub, href: 'https://github.com/browseping', label: 'GitHub' },
@@ -82,8 +82,8 @@ const Footer = () => {
                 { href: '/terms', label: 'Terms of Service' },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group"
                   >
                     <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
@@ -104,8 +104,8 @@ const Footer = () => {
                 { href: '/about', label: 'About Us' }
               ].map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-gray-300 hover:text-purple-400 transition-colors duration-200 flex items-center space-x-2 group"
                   >
                     <span className="w-0 h-0.5 bg-purple-400 group-hover:w-4 transition-all duration-300"></span>

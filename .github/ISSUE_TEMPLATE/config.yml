@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord Community
+    url: https://discord.gg/GdhXuEAZ
+    about: Join our Discord server for real-time discussions, support, and community engagement
+  - name: Email Support
+    url: mailto:support@browseping.com
+    about: Contact us directly via email for general inquiries
+  - name: Security Vulnerability
+    url: https://github.com/browseping/web/security/advisories/new
+    about: Report security vulnerabilities privately (DO NOT create public issues)

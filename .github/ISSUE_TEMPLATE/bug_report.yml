@@ -1,0 +1,152 @@
+name: Bug Report
+description: Report a bug or issue on the BrowsePing website
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this bug! Please fill out the form below to help us understand and fix the issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please provide a clear and concise description of the bug.
+      placeholder: Describe what went wrong...
+    validations:
+      required: true
+
+  - type: input
+    id: page-affected
+    attributes:
+      label: Affected Page/Section (Optional)
+      description: Where did you encounter this bug? (e.g., Homepage, Contact page, CLI/build process, etc.)
+      placeholder: e.g., Homepage, npm run lint, Contact form
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce (Optional)
+      description: Provide detailed steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior (Optional)
+      description: Describe what you expected to happen
+      placeholder: What should have happened?
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior (Optional)
+      description: Describe what actually happened instead
+      placeholder: What actually happened?
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots or videos to help explain the problem
+      placeholder: Drag and drop images or paste URLs here
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser (Optional)
+      description: Which browser are you using? Select None if not applicable (e.g., CLI/build errors)
+      options:
+        - None / Not applicable
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Brave
+        - Opera
+        - Other
+    validations:
+      required: false
+
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser Version (Optional)
+      description: What version of the browser are you using?
+      placeholder: e.g., 120.0.0.0
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device Type (Optional)
+      description: What device are you using? (Skip if not applicable)
+      options:
+        - None / Not applicable
+        - Desktop/Laptop
+        - Mobile Phone
+        - Tablet
+    validations:
+      required: false
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System (Optional)
+      description: Which OS are you using?
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS Sonoma (14.x)
+        - macOS Ventura (13.x)
+        - macOS Monterey (12.x)
+        - Ubuntu 22.04
+        - Ubuntu 20.04
+        - Other Linux
+        - iOS/iPadOS
+        - Android
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: console-errors
+    attributes:
+      label: Browser Console Errors
+      description: Any errors in the browser console? (Press F12 → Console tab)
+      placeholder: Paste console errors here...
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: Any other relevant information...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before Submitting
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues and this is not a duplicate
+          required: true
+        - label: This is not a security vulnerability (I understand I should use SECURITY.md for that)
+          required: true
+        - label: I have provided enough information to understand the issue
+          required: false

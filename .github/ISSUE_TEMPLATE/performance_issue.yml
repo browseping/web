@@ -1,0 +1,140 @@
+name: Performance Issue
+description: Report performance problems like slow loading or high resource usage
+title: "[PERFORMANCE] "
+labels: ["performance", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us keep the BrowsePing website fast and efficient! Please describe the performance issue below.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Performance Issue Description
+      description: Describe the performance problem you're experiencing
+      placeholder: What's slow or using too much resources?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Type of Performance Issue (Optional)
+      description: What kind of performance problem is this?
+      options:
+        - Slow page loading
+        - Slow animations/transitions
+        - Layout shift/jank
+        - Large bundle size
+        - Slow API responses
+        - Memory leak
+        - High CPU usage
+        - Unoptimized images
+        - Other
+    validations:
+      required: false
+
+  - type: input
+    id: page-affected
+    attributes:
+      label: Affected Page/Section (Optional)
+      description: Where are you experiencing this performance issue?
+      placeholder: e.g., Homepage, Leaderboard, All pages
+    validations:
+      required: false
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How Often Does This Occur? (Optional)
+      description: How frequently do you experience this issue?
+      options:
+        - Always/Every time
+        - Frequently (more than half the time)
+        - Sometimes (occasionally)
+        - Rarely
+    validations:
+      required: false
+
+  - type: textarea
+    id: performance-metrics
+    attributes:
+      label: Performance Metrics
+      description: If you have any metrics (Lighthouse scores, load times, etc.), please share them
+      placeholder: |
+        - Page load time: X seconds
+        - Lighthouse Performance score: X/100
+        - Time to Interactive: X seconds
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce (Optional)
+      description: How can we reproduce this performance issue?
+      placeholder: |
+        1. Navigate to ...
+        2. Scroll to ...
+        3. Notice slow loading...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser (Optional)
+      description: Select None if not applicable
+      options:
+        - None / Not applicable
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Brave
+        - Opera
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device Type (Optional)
+      options:
+        - Desktop/Laptop
+        - Mobile Phone
+        - Tablet
+    validations:
+      required: false
+
+  - type: dropdown
+    id: connection-speed
+    attributes:
+      label: Internet Connection Speed (Optional)
+      description: What's your approximate internet speed?
+      options:
+        - Fast (50+ Mbps)
+        - Medium (10-50 Mbps)
+        - Slow (< 10 Mbps)
+        - Unknown
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix (Optional)
+      description: If you have ideas for improving performance, share them here
+      placeholder: Potential solutions...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I have searched existing issues for similar performance problems
+          required: true
+        - label: This issue is specifically about performance (not general bugs)
+          required: false
+        - label: I have tested on a stable internet connection
+          required: false
