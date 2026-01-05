@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { FiUsers, FiGlobe, FiHeart } from 'react-icons/fi';
+import { FiHeart } from 'react-icons/fi';
 
 const AboutHero = () => {
   const [isVisible, setIsVisible] = useState(false);
