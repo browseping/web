@@ -29,21 +29,31 @@ const AboutValues = () => {
     <section className="py-22 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Our Core Values</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          {/* FIXED: Title and Description colors */}
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Core Values</h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             The principles that guide everything we do at BrowsePing.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="flex items-start space-x-6 p-8 bg-gray-800/30 rounded-3xl border border-gray-700/50 hover:bg-gray-800/50 transition-all duration-300 houver:cursor-pointer">
-              <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center border border-blue-500/20">
-                <value.icon className="text-blue-400" size={28} />
+            <div key={index} className="
+              flex items-start space-x-6 p-8 
+              rounded-3xl transition-all duration-300 cursor-pointer
+              /* LIGHT MODE: White background, gray border */
+              bg-white border border-gray-200 hover:shadow-lg
+              /* DARK MODE: Dark background, dark border */
+              dark:bg-gray-800/30 dark:border-gray-700/50 dark:hover:bg-gray-800/50
+            ">
+              <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-2xl flex items-center justify-center border border-blue-500/20">
+                <value.icon className="text-blue-600 dark:text-blue-400" size={28} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed">
+                {/* FIXED: Title Text Color */}
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{value.title}</h3>
+                {/* FIXED: Description Text Color */}
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
                   {value.description}
                 </p>
               </div>

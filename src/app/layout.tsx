@@ -22,11 +22,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1f2937' },
-    { media: '(prefers-color-scheme: dark)', color: '#111827' },
-  ],
-  colorScheme: 'dark',
+  // Removed hardcoded colorScheme to let the toggle handle it
 };
 
 export default function RootLayout({
@@ -34,12 +30,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
- return (
-  <html lang="en">
-    <body className={inter.className}>
-      {children}
-      <BackToTop />
-    </body>
-  </html>
-);
+  return (
+    // 1. suppressHydrationWarning is REQUIRED for theme toggles
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-background text-foreground`}>
+        {children}
+        <BackToTop />
+      </body>
+    </html>
+  );
 }
+

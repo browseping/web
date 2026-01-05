@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FiDownload, FiUsers, FiBarChart, FiShield, FiChrome, FiArrowRight, FiZap, FiGithub, FiCode } from 'react-icons/fi';
+import { FiDownload, FiUsers, FiBarChart, FiShield, FiArrowRight, FiGithub } from 'react-icons/fi';
 import BrowserDetector from '../../hooks/useBrowserDetector';
 
 const HeroSection = () => {
@@ -34,7 +34,8 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-20"
+      // FIXED: Dynamic Background (White/Blue-tint in Light Mode, Dark in Dark Mode)
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 relative overflow-hidden flex items-center pt-20 transition-colors duration-300"
     >
       {/* Animated gradient background */}
       <div 
@@ -58,23 +59,26 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 border border-green-500/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm transition-all duration-1000 ${
+          <div className={`inline-flex items-center space-x-3 bg-white/50 dark:bg-green-500/10 border border-green-500/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <FiGithub className="text-green-400" size={18} />
-            <span className="text-green-300 text-sm font-semibold">Open Source</span>
+            <FiGithub className="text-green-600 dark:text-green-400" size={18} />
+            <span className="text-green-700 dark:text-green-300 text-sm font-semibold">Open Source</span>
             <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-            <span className="text-blue-300 text-sm font-medium">Browser Extension</span>
+            <span className="text-blue-700 dark:text-blue-300 text-sm font-medium">Browser Extension</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-            <span className={`block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent transition-all duration-1000 delay-300 ${
+            {/* FIXED: "Socialize" - Dark Gray in Light Mode, White in Dark Mode */}
+            <span className={`block text-gray-900 dark:bg-gradient-to-r dark:from-white dark:via-blue-100 dark:to-white dark:bg-clip-text dark:text-transparent transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               Socialize
             </span>
-            <span className={`block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-1000 delay-500 ${
+            
+            {/* "Your Browsing" - Adjusted gradient for better contrast in light mode */}
+            <span className={`block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 dark:from-blue-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent transition-all duration-1000 delay-500 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               Your Browsing
@@ -82,15 +86,15 @@ const HeroSection = () => {
           </h1>
           
           {/* Subtitle */}
-          <p className={`text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
+          <p className={`text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             The{' '}
-            <span className="text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text font-bold">
+            <span className="text-transparent bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text font-bold">
               open-source
             </span>
             {' '}browser extension that transforms your solitary browsing into a{' '}
-            <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold">
+            <span className="text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text font-semibold">
               vibrant social experience
             </span>
             . Connect with friends, share your digital presence, and discover what's capturing everyone's attention across the web.
@@ -101,21 +105,22 @@ const HeroSection = () => {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             {[
-              { icon: FiGithub, text: 'Open Source', color: 'text-green-400' },
-              { icon: FiUsers, text: 'Social Presence', color: 'text-blue-400' },
-              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-400' },
-              { icon: FiShield, text: 'Privacy First', color: 'text-purple-400' }
+              { icon: FiGithub, text: 'Open Source', color: 'text-green-600 dark:text-green-400' },
+              { icon: FiUsers, text: 'Social Presence', color: 'text-blue-600 dark:text-blue-400' },
+              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-600 dark:text-cyan-400' },
+              { icon: FiShield, text: 'Privacy First', color: 'text-purple-600 dark:text-purple-400' }
             ].map((feature, index) => (
               <div key={index} className="flex items-center space-x-2 group cursor-pointer">
-                <div className="p-2 rounded-lg bg-gray-800/50 group-hover:bg-gray-700/50 transition-colors">
+                <div className="p-2 rounded-lg bg-white shadow-sm dark:bg-gray-800/50 dark:shadow-none group-hover:bg-gray-100 dark:group-hover:bg-gray-700/50 transition-colors">
                   <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors">{feature.text}</span>
+                {/* FIXED: Text color */}
+                <span className="text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">{feature.text}</span>
               </div>
             ))}
           </div>
 
-          {/* CTA Buttons with browser detection */}
+          {/* CTA Buttons */}
           <div className={`flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-1100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
@@ -145,7 +150,8 @@ const HeroSection = () => {
             
             <Link
               href="/download"
-              className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-900/20"
+              // FIXED: Border and text colors
+              className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-white/50 dark:bg-gray-900/20"
             >
               <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
               <span>All Download Options</span>
@@ -177,7 +183,7 @@ const HeroSection = () => {
           <div className={`transition-all duration-1000 delay-1300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <p className="text-gray-400 mb-6 text-lg">Available for all major browsers</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-6 text-lg">Available for all major browsers</p>
             <div className="flex justify-center items-center space-x-12">
               {allBrowsers.map((browser, index) => (
                 <div 
@@ -188,7 +194,7 @@ const HeroSection = () => {
                   <div className="text-4xl group-hover:scale-125 group-hover:animate-pulse transition-all duration-300">
                     {browser.icon}
                   </div>
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
+                  <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                     {browser.name}
                   </span>
                 </div>

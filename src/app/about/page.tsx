@@ -13,6 +13,11 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <Layout>
+      {/* NOTE: You must also go into these two files:
+         1. components/about/AboutHero.tsx
+         2. components/about/AboutValues.tsx
+         And change 'text-white' to 'text-gray-900 dark:text-white' there too! 
+      */}
       <AboutHero />
       <AboutValues />
       
@@ -26,10 +31,11 @@ export default function AboutPage() {
               <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl" />
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            {/* FIXED: Added dark: prefix for text colors */}
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Be Part of the Journey
             </h2>
-            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
               Whether you&apos;re a developer looking to contribute or a user with a vision, 
               we&apos;d love to have you in our community.
             </p>
@@ -37,7 +43,8 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
                 href="/download"
-                className="w-full sm:w-auto bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition-all duration-300 flex items-center justify-center space-x-2 group"
+                // FIXED: Button bg needs to be distinct in light mode too
+                className="w-full sm:w-auto bg-white dark:bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 flex items-center justify-center space-x-2 group shadow-lg"
               >
                 <span>Get Started</span>
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -46,6 +53,7 @@ export default function AboutPage() {
                 href="https://github.com/browseping"
                 target="_blank"
                 rel="noopener noreferrer"
+                // FIXED: Dark button looks good in both, but border helps in dark mode
                 className="w-full sm:w-auto bg-gray-800 text-white px-8 py-4 rounded-2xl font-bold hover:bg-gray-700 transition-all duration-300 border border-gray-700 flex items-center justify-center space-x-2"
               >
                 <FiGithub size={20} />

@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX, FiDownload, FiUsers, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+// 1. IMPORT THE TOGGLE HERE
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,9 +28,10 @@ const Navbar = () => {
   ];
 
   return (
+    // UPDATED COLORS: Added "bg-white/95" and "border-gray-200" for Light Mode
     <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
       scrolled 
-        ? 'bg-gray-900/95 backdrop-blur-lg border-b border-gray-800' 
+        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +45,8 @@ const Navbar = () => {
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 BrowsePing
               </span>
-              <div className="text-xs text-gray-400 -mt-1">Socialize Your Browsing</div>
+              {/* UPDATED: Darker text for Light Mode */}
+              <div className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Socialize Your Browsing</div>
             </div>
           </Link>
 
@@ -52,7 +56,8 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center space-x-1 text-gray-300 hover:text-blue-400 transition-all duration-200 font-medium relative group"
+                // UPDATED: Text colors for Light/Dark modes
+                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-200 font-medium relative group"
               >
                 {item.icon}
                 <span>{item.label}</span>
@@ -63,11 +68,16 @@ const Navbar = () => {
 
           {/* Action Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
+            
+            {/* 2. DESKTOP TOGGLE PLACED HERE */}
+            <ThemeToggle />
+
             <a
               href="https://github.com/browseping"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
+              // UPDATED: Border and Text colors
+              className="flex items-center space-x-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 border border-gray-300 dark:border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
             >
               <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" />
               <span>Contribute</span>
@@ -83,10 +93,13 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            {/* Optional: Show Toggle on mobile header too */}
+            <ThemeToggle />
+            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-blue-400 transition-colors p-2"
+              className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors p-2"
             >
               {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -96,23 +109,26 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-lg border-t border-gray-800 rounded-b-xl">
+            {/* UPDATED: Mobile Menu Background */}
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 rounded-b-xl">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors"
+                  // UPDATED: Mobile Link Colors
+                  className="flex items-center space-x-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-md transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.icon}
                   <span>{item.label}</span>
                 </Link>
               ))}
+              
               <a
                 href="https://github.com/browseping"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2"
+                className="flex items-center space-x-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-md transition-colors border border-gray-300 dark:border-gray-600 mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <FiGithub size={16} />
