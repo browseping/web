@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 import HeroSection from '@/components/home/HeroSection'
 
-
 vi.mock('@/hooks/useBrowserDetector', () => ({
+
     default: () => ({
         detectedBrowser: null,
         allBrowsers: []
@@ -16,3 +16,4 @@ test('HeroSection renders main heading', () => {
     expect(heading).toHaveTextContent('Socialize')
     expect(heading).toHaveTextContent('Your Browsing')
 })
+
