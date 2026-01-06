@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { expect, test, vi } from 'vitest'
 import HeroSection from '@/components/home/HeroSection'
 
-// Mock the hook to ensure isolation
+
 vi.mock('@/hooks/useBrowserDetector', () => ({
     default: () => ({
         detectedBrowser: null,
