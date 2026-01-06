@@ -19,11 +19,8 @@ const ContactUs = () => {
           </h1>
 
           <p className="text-xl text-gray-300 leading-relaxed">
-<<<<<<< HEAD
             We&apos;re here to help! Whether you have questions, need support, or want to contribute to our open-source project,
-=======
-            We&apos;re here to help! Whether you have questions, need support, or want to contribute to our open-source project, 
->>>>>>> upstream/main
+
             we&apos;d love to hear from you.
           </p>
         </div>

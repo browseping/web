@@ -156,20 +156,11 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-<<<<<<< HEAD
-              <img
+              <Image
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt"
-                style={{ width: '250px', height: '54px' }}
-                width="250"
-                height="54"
-=======
-              <Image 
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
-                alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                width={250} 
-                height={54} 
->>>>>>> upstream/main
+                width={250}
+                height={54}
                 className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-gray-600/50"
               />
             </a>

@@ -56,7 +56,6 @@ const PublicLeaderboard = () => {
         });
       }
     } catch (err) {
-    } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
       console.log('Leaderboard API Error:', errorMessage);
       setError('Server is not available.');

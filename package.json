@@ -6,12 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-<<<<<<< HEAD
-    "lint": "eslint",
+    "lint": "eslint .",
     "test": "vitest"
-=======
-    "lint": "eslint ."
->>>>>>> upstream/main
   },
   "dependencies": {
     "next": "15.5.9",
