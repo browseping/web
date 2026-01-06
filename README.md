@@ -62,6 +62,46 @@ The project includes the following npm scripts:
 4. Run `npm run lint` before committing to ensure code quality
 5. Create a pull request following our [Contributing Guidelines](CONTRIBUTING.md)
 
+## Local Development with Docker
+This project provides Docker support for local development only to ensure a consistent development environment across different machines.
+
+> Note: Docker is not used for production deployment.
+Production builds and deployments are handled by Vercel.
+### Prerequisites
+Make sure you have the following installed:
+- Docker (v20+ recommended)
+- Docker Compose (comes bundled with Docker Desktop)
+### Why Docker for Local Development?
+
+Using Docker helps to:
+- Avoid Node.js version mismatches
+- Simplify onboarding for new contributors
+- Match local development closely with the CI environment
+- Run the project without manually installing dependencies
+---
+### Run the Project Using Docker
+**Start the development server**
+```
+docker-compose up --build
+```
+This will:
+
+- Build the Docker image
+- Install dependencies inside the container
+- Start the Next.js dev server
+Once running, open:
+```
+http://localhost:3000
+```
+**Stop the Containers**
+```
+docker-compose down
+```
+**Clean Docker cache (if needed)**
+```
+docker system prune -f
+```
+
 ## Project Structure
 
 ```
