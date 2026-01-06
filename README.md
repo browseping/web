@@ -54,6 +54,8 @@ The project includes the following npm scripts:
 
 - **`npm run lint`**: Runs ESLint to check for code quality issues and enforce coding standards.
 
+- **`npm test`**: Runs the unit tests using Vitest. This verifies that individual components and logic are working correctly and prevents regressions.
+
 ## Development Workflow
 
 1. Run `npm run dev` to start the development server
@@ -67,6 +69,7 @@ The project includes the following npm scripts:
 ```
 web/
 ├── src/
+│   ├── __tests__/        # Unit tests and testing configuration
 │   ├── app/              # Next.js App Router pages and layouts
 │   ├── components/       # Reusable React components
 │   └── hooks/            # Custom React hooks
