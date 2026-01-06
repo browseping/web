@@ -40,7 +40,7 @@ const LeaderboardHero = () => {
           <p className={`text-lg text-gray-300 mb-8 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            See who's leading the pack in social browsing this month
+            See who&apos;s leading the pack in social browsing this month
           </p>
 
           <div className={`transition-all duration-1000 delay-700 ${

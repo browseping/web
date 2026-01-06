@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FiMail, FiGithub, FiMessageSquare, FiHeart, FiCode, FiUsers } from 'react-icons/fi';
+import { FiMail, FiGithub, FiMessageSquare } from 'react-icons/fi';
 
 const ContactUs = () => {
   return (
@@ -19,8 +19,8 @@ const ContactUs = () => {
           </h1>
           
           <p className="text-xl text-gray-300 leading-relaxed">
-            We're here to help! Whether you have questions, need support, or want to contribute to our open-source project, 
-            we'd love to hear from you.
+            We&apos;re here to help! Whether you have questions, need support, or want to contribute to our open-source project, 
+            we&apos;d love to hear from you.
           </p>
         </div>
 
