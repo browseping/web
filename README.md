@@ -115,4 +115,12 @@ Join our community on [Discord](https://discord.gg/GdhXuEAZ) to discuss ideas an
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Contributors
+
+Thanks to all the wonderful people who have contributed to this project.
+
+<a href="https://github.com/browseping/web/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=browseping/web" />
+</a>
+
 ---
