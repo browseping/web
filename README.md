@@ -62,6 +62,22 @@ The project includes the following npm scripts:
 4. Run `npm run lint` before committing to ensure code quality
 5. Create a pull request following our [Contributing Guidelines](CONTRIBUTING.md)
 
+
+## Run the Project Using Docker
+**Start the development server**
+```
+docker compose up --build
+```
+Once running, open:
+
+```
+http://localhost:3000
+```
+**Stop the Containers**
+```
+docker compose down
+```
+
 ## Project Structure
 
 ```
