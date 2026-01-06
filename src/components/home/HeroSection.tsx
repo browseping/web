@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { FiDownload, FiUsers, FiBarChart, FiShield, FiChrome, FiArrowRight, FiZap, FiGithub, FiCode } from 'react-icons/fi';
+import Image from 'next/image';
+import { FiDownload, FiUsers, FiBarChart, FiShield, FiArrowRight, FiGithub } from 'react-icons/fi';
 import BrowserDetector from '../../hooks/useBrowserDetector';
 
 const HeroSection = () => {
@@ -93,7 +94,7 @@ const HeroSection = () => {
             <span className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text font-semibold">
               vibrant social experience
             </span>
-            . Connect with friends, share your digital presence, and discover what's capturing everyone's attention across the web.
+            . Connect with friends, share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
           </p>
 
           {/* Key Features */}
@@ -162,12 +163,11 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-              <img 
+              <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                style={{ width: '250px', height: '54px' }} 
-                width="250" 
-                height="54" 
+                width={250} 
+                height={54} 
                 className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-gray-600/50"
               />
             </a>

@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { FiDownload, FiZap, FiCode, FiGlobe } from 'react-icons/fi';
 
 const DownloadHero = () => {
@@ -80,9 +80,8 @@ const DownloadHero = () => {
               <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                style={{ width: '250px', height: '54px' }} 
-                width="250" 
-                height="54" 
+                width={250} 
+                height={54} 
                 className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
               />
             </a>

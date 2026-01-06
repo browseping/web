@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { FiUsers, FiBarChart, FiShield, FiMessageCircle, FiTrendingUp, FiEye, FiZap, FiGlobe, FiGithub, FiClock, FiBell, FiWifi, FiCode, FiChevronLeft, FiChevronRight, FiPlay, FiPause } from 'react-icons/fi';
+import Image from 'next/image';
+import { FiUsers, FiBarChart, FiShield, FiMessageCircle, FiGithub, FiClock, FiBell, FiWifi, FiCode, FiChevronLeft, FiChevronRight, FiZap } from 'react-icons/fi';
 import { FaTrophy } from 'react-icons/fa';
 
 const FeaturesSection = () => {
@@ -334,12 +335,11 @@ const FeaturesSection = () => {
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-              <img 
+              <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                style={{ width: '250px', height: '54px' }} 
-                width="250" 
-                height="54" 
+                width={250} 
+                height={54} 
                 className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
               />
             </a>
