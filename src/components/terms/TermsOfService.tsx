@@ -13,16 +13,16 @@ const TermsOfService = () => {
             <FiFileText className="text-purple-400" size={20} />
             <span className="text-purple-300 font-medium">Terms of Service</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Terms of <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Service</span>
           </h1>
-          
+
           <p className="text-xl text-gray-300 leading-relaxed">
             These terms govern your use of BrowsePing, our open-source browser extension for social browsing.
             By using our service, you agree to these terms.
           </p>
-          
+
           <div className="mt-6 text-sm text-gray-400">
             <p>Last updated: October 2025</p>
           </div>
@@ -48,7 +48,7 @@ const TermsOfService = () => {
             <h2 className="text-2xl font-bold text-white mb-6">1. Acceptance of Terms</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                By accessing or using BrowsePing, you agree to be bound by these Terms of Service and our Privacy Policy. 
+                By accessing or using BrowsePing, you agree to be bound by these Terms of Service and our Privacy Policy.
                 If you do not agree to these terms, you may not use our service.
               </p>
               <p>
@@ -75,7 +75,7 @@ const TermsOfService = () => {
                 <li>• Friend networks and discovery</li>
               </ul>
               <p>
-                All social features are optional and controlled by user privacy settings. The service is provided "as is" without warranties.
+                All social features are optional and controlled by user privacy settings. The service is provided &quot;as is&quot; without warranties.
               </p>
             </div>
           </div>
@@ -118,7 +118,7 @@ const TermsOfService = () => {
                   <li>• Contribute to the open-source project</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-lg font-semibold text-red-400 mb-3">You May Not</h3>
                 <ul className="space-y-2 ml-4">
@@ -152,7 +152,7 @@ const TermsOfService = () => {
               </ul>
               <div className="mt-4 p-4 bg-blue-900/20 border border-blue-500/30 rounded-xl">
                 <p className="text-blue-300 text-sm">
-                  <strong>Data Ownership:</strong> You retain ownership of all your personal data. 
+                  <strong>Data Ownership:</strong> You retain ownership of all your personal data.
                   We only process data as necessary to provide the service and as permitted by your privacy settings.
                 </p>
               </div>
@@ -204,7 +204,7 @@ const TermsOfService = () => {
               </ul>
               <div className="mt-4 p-4 bg-amber-900/20 border border-amber-500/30 rounded-xl">
                 <p className="text-amber-300 text-sm">
-                  <strong>Community Project:</strong> BrowsePing is a community-driven project. 
+                  <strong>Community Project:</strong> BrowsePing is a community-driven project.
                   While we aim for reliability, the service depends on community contributions and volunteer maintenance.
                 </p>
               </div>
@@ -229,7 +229,7 @@ const TermsOfService = () => {
             <h2 className="text-2xl font-bold text-white mb-6">9. Limitation of Liability</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                BrowsePing is provided "as is" without warranties. We are not liable for:
+                BrowsePing is provided &quot;as is&quot; without warranties. We are not liable for:
               </p>
               <ul className="space-y-2 ml-6">
                 <li>• Data loss or corruption</li>
@@ -240,7 +240,7 @@ const TermsOfService = () => {
               </ul>
               <div className="mt-4 p-4 bg-red-900/20 border border-red-500/30 rounded-xl">
                 <p className="text-red-300 text-sm">
-                  <strong>Important:</strong> Use the service at your own risk. 
+                  <strong>Important:</strong> Use the service at your own risk.
                   Always maintain backups of important data and use appropriate security practices.
                 </p>
               </div>
@@ -259,7 +259,7 @@ const TermsOfService = () => {
                   <li>• Some data may be retained for legal or security purposes</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-lg font-semibold text-blue-400 mb-3">By Us</h3>
                 <ul className="space-y-2 ml-4">
@@ -276,7 +276,7 @@ const TermsOfService = () => {
             <h2 className="text-2xl font-bold text-white mb-6">11. Governing Law</h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                These terms are governed by applicable international laws and regulations for digital services. 
+                These terms are governed by applicable international laws and regulations for digital services.
                 Disputes will be resolved through good faith discussion and, if necessary, appropriate legal channels.
               </p>
             </div>

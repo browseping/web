@@ -21,31 +21,27 @@ const LeaderboardHero = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className={`inline-flex items-center space-x-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <div className={`inline-flex items-center space-x-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             <FiAward className="text-yellow-400" size={16} />
             <span className="text-yellow-300 text-sm font-medium">Community Leaderboard</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className={`text-4xl md:text-5xl font-bold mb-4 transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <h1 className={`text-4xl md:text-5xl font-bold mb-4 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
               Top Browsing Champions
             </span>
           </h1>
-          
-          <p className={`text-lg text-gray-300 mb-8 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            See who's leading the pack in social browsing this month
+
+          <p className={`text-lg text-gray-300 mb-8 max-w-2xl mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+            See who&apos;s leading the pack in social browsing this month
           </p>
 
-          <div className={`transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <div className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             <a
               href="/download"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"

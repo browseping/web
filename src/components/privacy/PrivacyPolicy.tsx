@@ -13,16 +13,16 @@ const PrivacyPolicy = () => {
             <FiShield className="text-blue-400" size={20} />
             <span className="text-blue-300 font-medium">Privacy Policy</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Your Privacy is Our <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Priority</span>
           </h1>
-          
+
           <p className="text-xl text-gray-300 leading-relaxed">
             BrowsePing is committed to protecting your privacy and giving you complete control over your data.
             This policy explains how we collect, use, and protect your information.
           </p>
-          
+
           <div className="mt-6 text-sm text-gray-400">
             <p>Last updated: October 2025</p>
           </div>
@@ -56,14 +56,14 @@ const PrivacyPolicy = () => {
 
         {/* Main Content */}
         <div className="space-y-12">
-          
+
           {/* Information We Collect */}
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
               <FiEye className="text-blue-400" size={24} />
               <span>What Information We Collect</span>
             </h2>
-            
+
             <div className="space-y-6">
               <div>
                 <h3 className="text-lg font-semibold text-blue-400 mb-3">Account Information</h3>
@@ -105,7 +105,7 @@ const PrivacyPolicy = () => {
               <FiUsers className="text-purple-400" size={24} />
               <span>How We Use Your Information</span>
             </h2>
-            
+
             <div className="space-y-4 text-gray-300">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
@@ -132,7 +132,7 @@ const PrivacyPolicy = () => {
               <FiLock className="text-green-400" size={24} />
               <span>Your Privacy Controls</span>
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-green-400">Granular Settings</h3>
@@ -145,7 +145,7 @@ const PrivacyPolicy = () => {
                   <li>• Social media links visibility</li>
                 </ul>
               </div>
-              
+
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-green-400">Privacy Levels</h3>
                 <ul className="space-y-2 text-gray-300 text-sm">
@@ -156,10 +156,10 @@ const PrivacyPolicy = () => {
                 </ul>
               </div>
             </div>
-            
+
             <div className="mt-6 p-4 bg-blue-900/20 border border-blue-500/30 rounded-xl">
               <p className="text-blue-300 text-sm">
-                <strong>Default Settings:</strong> All privacy settings default to the most restrictive level. 
+                <strong>Default Settings:</strong> All privacy settings default to the most restrictive level.
                 You must explicitly choose to share information with others.
               </p>
             </div>
@@ -171,7 +171,7 @@ const PrivacyPolicy = () => {
               <FiShield className="text-orange-400" size={24} />
               <span>Data Security & Storage</span>
             </h2>
-            
+
             <div className="space-y-4 text-gray-300">
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-orange-400 rounded-full mt-2"></div>
@@ -198,7 +198,7 @@ const PrivacyPolicy = () => {
               <FiGithub className="text-gray-400" size={24} />
               <span>Open Source Transparency</span>
             </h2>
-            
+
             <div className="space-y-4 text-gray-300">
               <p>
                 BrowsePing is completely open source, which means:
@@ -221,7 +221,7 @@ const PrivacyPolicy = () => {
                   <span><strong>Self-Hostable:</strong> You can run your own instance if you prefer complete control</span>
                 </div>
               </div>
-              
+
               <div className="mt-6 flex items-center space-x-4">
                 <a
                   href="https://github.com/browseping"
@@ -240,7 +240,7 @@ const PrivacyPolicy = () => {
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">Questions About Privacy?</h2>
             <p className="text-blue-300 mb-6">
-              We're here to help. Contact us for any privacy-related questions or concerns.
+              We&apos;re here to help. Contact us for any privacy-related questions or concerns.
             </p>
             <a
               href="/contact"

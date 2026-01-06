@@ -13,20 +13,20 @@ const ContactUs = () => {
             <FiMessageSquare className="text-green-400" size={20} />
             <span className="text-green-300 font-medium">Get in Touch</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Contact <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">BrowsePing</span>
           </h1>
-          
+
           <p className="text-xl text-gray-300 leading-relaxed">
-            We're here to help! Whether you have questions, need support, or want to contribute to our open-source project, 
-            we'd love to hear from you.
+            We&apos;re here to help! Whether you have questions, need support, or want to contribute to our open-source project,
+            we&apos;d love to hear from you.
           </p>
         </div>
 
         {/* Contact Methods */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          
+
           {/* General Contact */}
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center space-x-3 mb-6">
@@ -38,7 +38,7 @@ const ContactUs = () => {
                 <p className="text-gray-400">Questions, feedback, and support</p>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               <p className="text-gray-300">
                 For general questions, feedback, or support requests, reach out to us via email.
@@ -64,7 +64,7 @@ const ContactUs = () => {
                 <p className="text-gray-400">Contributing to the project</p>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               <p className="text-gray-300">
                 Want to contribute? Check out our GitHub repository for issues, discussions, and contribution guidelines.
@@ -88,7 +88,7 @@ const ContactUs = () => {
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-500/10 to-blue-500/10 rounded-full blur-2xl"></div>
-          
+
           <div className="relative z-10">
             <div className="text-center mb-12">
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
@@ -99,19 +99,19 @@ const ContactUs = () => {
                 Meet the Developer
               </h2>
             </div>
-            
+
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
-              
+
               {/* Profile Avatar & Info */}
               <div className="flex-shrink-0 text-center lg:text-left">
                 <div className="relative mb-6">
                   <div className="w-28 h-28 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 shadow-2xl shadow-blue-500/25">
                     <svg className="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                   </div>
                 </div>
-                
+
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">Akash Kumar</h3>
                   <p className="text-gray-400 font-medium">Main Developer</p>
@@ -121,7 +121,7 @@ const ContactUs = () => {
               {/* Social Links Grid */}
               <div className="flex-1 w-full">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  
+
                   {/* Website */}
                   <a
                     href="https://akashkumar.is-a.dev"
@@ -173,7 +173,7 @@ const ContactUs = () => {
                     <div className="relative flex items-center space-x-3">
                       <div className="w-10 h-10 bg-blue-600/20 group-hover:bg-blue-600/30 rounded-lg flex items-center justify-center transition-colors">
                         <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                       </div>
                       <div className="min-w-0">
@@ -194,7 +194,7 @@ const ContactUs = () => {
                     <div className="relative flex items-center space-x-3">
                       <div className="w-10 h-10 bg-blue-400/20 group-hover:bg-blue-400/30 rounded-lg flex items-center justify-center transition-colors">
                         <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                       </div>
                       <div className="min-w-0">
@@ -205,7 +205,7 @@ const ContactUs = () => {
                   </a>
 
                 </div>
-                
+
                 {/* Email */}
                 <a
                   href="mailto:akashkumar.dev00@gmail.com"
@@ -223,7 +223,7 @@ const ContactUs = () => {
                   </div>
                 </a>
               </div>
-              
+
             </div>
           </div>
         </div>
