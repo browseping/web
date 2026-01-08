@@ -28,23 +28,23 @@ const PublicLeaderboard = () => {
     try {
       setLoading(true);
       setError(null);
-      
+
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       const url = `${apiUrl}/api/leaderboard/public-top`;
-      
+
       const response = await fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      
+
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         setData(result.data);
       } else {
@@ -105,7 +105,7 @@ const PublicLeaderboard = () => {
               Community Leaderboard
             </h2>
           </div>
-          
+
           <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center justify-center space-x-3">
               <FiRefreshCw className="animate-spin text-blue-400" size={24} />
@@ -121,7 +121,7 @@ const PublicLeaderboard = () => {
     <section className="py-20 bg-gray-900 relative">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-blue-900/10 to-gray-900 opacity-50" />
-      
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div className="text-center mb-16">
