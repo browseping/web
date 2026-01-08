@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const currentpath=usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -47,20 +49,37 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex items-center space-x-1 text-gray-300 hover:text-blue-400 transition-all duration-200 font-medium relative group"
-              >
-                {item.icon}
-                <span>{item.label}</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
-          </div>
+        
+<div className="hidden md:flex items-center space-x-8">
+  {navItems.map((item) => {
+   
+    const isActive =
+      item.href === '/'
+        ? currentpath === '/'
+        : currentpath.startsWith(item.href);
 
+    return (
+      <Link
+        key={item.href}
+        href={item.href}
+      
+        className={`flex items-center space-x-1 transition-all duration-200 font-medium relative group
+          ${
+            isActive
+              ? 'text-violet-500' 
+              : 'text-gray-300 hover:text-blue-400' 
+          }
+        `}
+      >
+        {item.icon}
+        <span>{item.label}</span>
+
+        
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
+      </Link>
+    );
+  })}
+</div>
           {/* Action Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <a
@@ -101,7 +120,15 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors"
+                  
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors
+      ${
+        currentpath === item.href
+          ? 'text-violet-400 bg-gray-800/50' 
+          : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
+      }
+    `}
+            
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.icon}
