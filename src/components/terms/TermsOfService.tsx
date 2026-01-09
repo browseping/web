@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FiFileText, FiUsers, FiShield, FiGithub, FiMail, FiAlertTriangle } from 'react-icons/fi';
+import { FiFileText, FiUsers, FiShield, FiGithub, FiMail, FiAlertTriangle, FiCheckCircle, FiLock, FiBook } from 'react-icons/fi';
 
 const TermsOfService = () => {
   return (
@@ -28,6 +28,41 @@ const TermsOfService = () => {
           </div>
         </div>
 
+        {/* Quick Navigation */}
+        <div className="bg-gray-800/40 backdrop-blur-md border border-gray-700/50 rounded-2xl p-6 mb-12 shadow-lg">
+          <h3 className="text-lg font-semibold text-white mb-4 flex items-center justify-center space-x-2">
+            <FiFileText className="text-purple-400" size={20} />
+            <span>Quick Navigation</span>
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              { id: 1, title: 'Acceptance of Terms', icon: FiCheckCircle },
+              { id: 2, title: 'Description of Service', icon: FiUsers },
+              { id: 3, title: 'User Accounts', icon: FiShield },
+              { id: 4, title: 'Acceptable Use Policy', icon: FiAlertTriangle },
+              { id: 5, title: 'Privacy and Data', icon: FiShield },
+              { id: 6, title: 'Open Source License', icon: FiGithub },
+              { id: 7, title: 'Service Availability', icon: FiCheckCircle },
+              { id: 8, title: 'Intellectual Property', icon: FiBook },
+              { id: 9, title: 'Limitation of Liability', icon: FiAlertTriangle },
+              { id: 10, title: 'Termination', icon: FiUsers },
+              { id: 11, title: 'Governing Law', icon: FiLock }
+            ].map(item => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  const element = document.getElementById(`section-${item.id}`);
+                  element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="flex items-center space-x-2 text-left text-gray-300 hover:text-purple-400 transition-all duration-200 p-3 rounded-lg hover:bg-purple-500/10 border border-transparent hover:border-purple-500/30"
+              >
+                <item.icon size={16} className="flex-shrink-0" />
+                <span className="text-sm">{item.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Important Notice */}
         <div className="bg-amber-900/20 border border-amber-500/30 rounded-2xl p-6 mb-12">
           <h2 className="text-xl font-bold text-amber-400 mb-4 flex items-center space-x-2">
@@ -44,7 +79,7 @@ const TermsOfService = () => {
         <div className="space-y-12">
 
           {/* Acceptance of Terms */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-1" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">1. Acceptance of Terms</h2>
             <div className="space-y-4 text-gray-300">
               <p>
@@ -58,7 +93,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Description of Service */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-2" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
               <FiUsers className="text-blue-400" size={24} />
               <span>2. Description of Service</span>
@@ -81,7 +116,7 @@ const TermsOfService = () => {
           </div>
 
           {/* User Accounts */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-3" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">3. User Accounts</h2>
             <div className="space-y-4 text-gray-300">
               <div>
@@ -106,7 +141,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Acceptable Use */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-4" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">4. Acceptable Use Policy</h2>
             <div className="space-y-6 text-gray-300">
               <div>
@@ -135,7 +170,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Privacy and Data */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-5" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
               <FiShield className="text-green-400" size={24} />
               <span>5. Privacy and Data</span>
@@ -160,7 +195,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Open Source License */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-6" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
               <FiGithub className="text-gray-400" size={24} />
               <span>6. Open Source License</span>
@@ -190,7 +225,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Service Availability */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-7" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">7. Service Availability</h2>
             <div className="space-y-4 text-gray-300">
               <p>
@@ -212,7 +247,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Intellectual Property */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-8" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">8. Intellectual Property</h2>
             <div className="space-y-4 text-gray-300">
               <ul className="space-y-2 ml-6">
@@ -225,7 +260,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Limitation of Liability */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-9" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">9. Limitation of Liability</h2>
             <div className="space-y-4 text-gray-300">
               <p>
@@ -248,7 +283,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Termination */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-10" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">10. Termination</h2>
             <div className="space-y-4 text-gray-300">
               <div>
@@ -272,7 +307,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Governing Law */}
-          <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+          <div id="section-11" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6">11. Governing Law</h2>
             <div className="space-y-4 text-gray-300">
               <p>
