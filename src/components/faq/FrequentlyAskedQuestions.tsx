@@ -167,7 +167,7 @@ const FrequentlyAskedQuestions = () => {
                 <FiGithub className="text-gray-400" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Found an Bug ? </h3>
+                <h3 className="text-xl font-bold text-white">Found a Bug ? </h3>
                 <p className="text-gray-400">Report the bug to out GitHub repo</p>
               </div>
             </div>
