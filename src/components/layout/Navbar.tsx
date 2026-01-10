@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub, FiFileText, FiMessageSquare } from 'react-icons/fi';
 import { usePathname } from 'next/navigation';
+import { FaRegQuestionCircle } from 'react-icons/fa';
+import { GoHome } from 'react-icons/go';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,11 +22,12 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { href: '/', label: 'Home', icon: null },
+    { href: '/', label: 'Home', icon: <GoHome size={16} /> },
     { href: '/leaderboard', label: 'Leaderboard', icon: <FiBarChart size={16} /> },
     { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} /> },
-    { href: '/terms', label: 'Terms', icon: null },
-    { href: '/contact', label: 'Contact', icon: null },
+    { href: '/terms', label: 'Terms', icon: <FiFileText size={16} />  },
+    { href: '/faq', label: 'FAQs', icon: <FaRegQuestionCircle size={16} /> },
+    { href: '/contact', label: 'Contact', icon: <FiMessageSquare size={16} /> }
   ];
 
   return (
