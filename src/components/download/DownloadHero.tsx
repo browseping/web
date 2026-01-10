@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { FiDownload, FiZap, FiCode, FiGlobe } from 'react-icons/fi';
 
 const DownloadHero = () => {
@@ -11,7 +12,7 @@ const DownloadHero = () => {
   }, []);
 
   return (
-    <section className="min-h-[70vh] bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-8">
+    <section className="min-h-[70vh] bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-20">
       {/* Animated background elements */}
       <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse opacity-60" />
       <div className="absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-40" />
@@ -67,7 +68,7 @@ const DownloadHero = () => {
           </div>
 
           {/* Product Hunt Badge */}
-          <div className={`flex justify-center mb-12 transition-all duration-1000 delay-900 ${
+          <div className={`flex justify-center mb-8 transition-all duration-1000 delay-900 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <a 
@@ -76,12 +77,11 @@ const DownloadHero = () => {
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-              <img 
+              <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                style={{ width: '250px', height: '54px' }} 
-                width="250" 
-                height="54" 
+                width={250} 
+                height={54} 
                 className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
               />
             </a>

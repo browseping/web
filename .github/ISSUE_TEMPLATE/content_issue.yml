@@ -1,0 +1,70 @@
+name: Content/Documentation Issue
+description: Report content errors or suggest documentation improvements
+title: "[CONTENT] "
+labels: ["documentation", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve the BrowsePing website content and documentation!
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of content issue is this?
+      options:
+        - Typo/Grammar error
+        - Incorrect/Outdated information
+        - Missing information
+        - Unclear explanation
+        - Broken link
+        - Documentation improvement
+        - Content suggestion
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page-affected
+    attributes:
+      label: Affected Page/Section (Optional)
+      description: Which page, file, or documentation has the content issue?
+      placeholder: e.g., README.md, Privacy Policy, Homepage
+    validations:
+      required: false
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content
+      description: Quote or describe the current content that needs improvement
+      placeholder: What's currently written...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-content
+    attributes:
+      label: Proposed Content/Fix
+      description: How should the content be improved or what should be added?
+      placeholder: Your suggested content or fix...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information
+      placeholder: Additional details, sources, references...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before Submitting
+      options:
+        - label: I have searched for similar content issues
+          required: true
+        - label: I have verified the content issue exists
+          required: false

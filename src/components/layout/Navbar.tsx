@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiMenu, FiX, FiDownload, FiUsers, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const currentpath=usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +54,9 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex items-center space-x-1 text-gray-300 hover:text-blue-400 transition-all duration-200 font-medium relative group"
+                className={`flex items-center space-x-1 transition-all duration-200 font-medium relative group ${
+                  currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400'
+                }`}
               >
                 {item.icon}
                 <span>{item.label}</span>
@@ -76,7 +80,7 @@ const Navbar = () => {
               href="/download"
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 relative overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 transition-opacity duration-300"></div>
               <FiDownload size={16} className="relative z-10" />
               <span className="relative z-10">Download</span>
             </Link>
@@ -101,7 +105,9 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors"
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${
+                    currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.icon}
