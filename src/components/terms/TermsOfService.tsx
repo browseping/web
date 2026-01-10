@@ -53,7 +53,7 @@ const TermsOfService = () => {
                 onClick={() => {
                   const element = document.getElementById(`section-${item.id}`);
                   if (element) {
-                    const navbarHeight = 80; // Adjust based on your navbar height
+                    const navbarHeight = 80;
                     const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                     const offsetPosition = elementPosition - navbarHeight;
                     
