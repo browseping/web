@@ -99,7 +99,7 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6 text-white">Support</h3>
             <ul className="space-y-4">
               {[
-                { href: '/help', label: 'Help Center' },
+                { href: '/faq', label: 'Help Center' },
                 { href: '/contact', label: 'Contact Us' },
                 { href: '/about', label: 'About Us' }
               ].map((link) => (
