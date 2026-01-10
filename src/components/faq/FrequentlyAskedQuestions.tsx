@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { FaRegQuestionCircle } from 'react-icons/fa';
-import { FiFileText, FiUsers, FiShield, FiGithub, FiMail, FiAlertTriangle } from 'react-icons/fi';
+import {FiGithub, FiMail} from 'react-icons/fi';
 import {
   Accordion,
   AccordionContent,
@@ -76,11 +76,11 @@ const FrequentlyAskedQuestions = () => {
                     <h1 className='font-bold mb-6'>You can add a friend by following the steps below:</h1>
                     <div className='flex flex-col gap-2'>
                     <a>1. Click on extensions in your browser and find BrowserPing  </a>
-                    <a>2. Open BrowserPing and go to Friends section in bottom navigation dock right next to "Home"</a>
+                    <a>2. Open BrowserPing and go to Friends section in bottom navigation dock right next to &quot;Home&quot;</a>
                     <div className='flex justify-center w-full'>
                         <Image src={Snap1} alt="snapshot1" className='w-[300px] rounded-md m-4'/>
                     </div>
-                    <a>3. In friends section select "Search" in top navigation bar </a>
+                    <a>3. In friends section select &quot;Search&quot; in top navigation bar </a>
                     <div className='flex justify-center w-full'>
                         <Image src={Snap2} alt="snapshot1" className='w-[300px] rounded-md m-4'/>
                     </div>
@@ -105,7 +105,7 @@ const FrequentlyAskedQuestions = () => {
                 <AccordionContent className="space-y-4 text-gray-300 text-xl">
                 <div className='flex flex-col justify-center items-start gap-3'>
                     <span>Yes. With Privacy Controls, you can decide who can see your data, including Online Status, Last Seen, Tab Activity, and more.</span>
-                    <span>To manage your privacy, simply navigate to your account’s Privacy Settings section and review the available control options.</span>
+                    <span>To manage your privacy, simply navigate to your account Privacy Settings section and review the available control options.</span>
                     <span className='w-full flex justify-center'>More {'->'}  Account {'->'} Privacy & Security</span>
                 </div>
                 </AccordionContent>
@@ -121,7 +121,7 @@ const FrequentlyAskedQuestions = () => {
                 <AccordionTrigger className="text-2xl font-bold text-white">4. How does the BrowserPing leaderboard works ?</AccordionTrigger>
                 <AccordionContent className="space-y-4 text-gray-300 text-xl">
                 <div className='flex flex-col justify-center items-start gap-3'>
-                    <span>BrowserPing tracks each user’s total online hours throughout the month and uses this data to automatically generate a monthly leaderboard, ranking users based on their overall activity.</span>
+                    <span>BrowserPing tracks each user&apos;s total online hours throughout the month and uses this data to automatically generate a monthly leaderboard, ranking users based on their overall activity.</span>
                     <span>Access your leaderboard by visiting the Analytics section from the main menu</span>
                     <span className='w-full flex justify-center'>Analytics {'->'}  Account {'->'} Leaderboard</span>
                 </div>
@@ -141,7 +141,7 @@ const FrequentlyAskedQuestions = () => {
                 <FiMail className="text-blue-400" size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Can't find your question</h3>
+                <h3 className="text-xl font-bold text-white">Can&apos;t find your question</h3>
                 <p className="text-gray-400">Contact Us on our mail address</p>
               </div>
             </div>
