@@ -52,7 +52,16 @@ const TermsOfService = () => {
                 key={item.id}
                 onClick={() => {
                   const element = document.getElementById(`section-${item.id}`);
-                  element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  if (element) {
+                    const navbarHeight = 80; // Adjust based on your navbar height
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - navbarHeight;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
                 }}
                 className="flex items-center space-x-2 text-left text-gray-300 hover:text-purple-400 transition-all duration-200 p-3 rounded-lg hover:bg-purple-500/10 border border-transparent hover:border-purple-500/30"
               >
