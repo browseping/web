@@ -7,6 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.browseping.com'),
+
   title: "BrowsePing - Socialize Your Browsing Experience",
   description:
     "Transform your solitary browsing into a vibrant social experience. Connect with friends, share your digital presence, and discover what's capturing everyone's attention across the web.",
@@ -14,7 +16,31 @@ export const metadata: Metadata = {
   authors: [{ name: "BrowsePing" }],
   icons: {
     icon: "/browseping.svg",
-  }
+  },
+
+  openGraph: {
+    title: "BrowsePing - Socialize Your Browsing Experience",
+    description: "Transform your solitary browsing into a vibrant social experience. Connect with friends, share your digital presence, and discover what's capturing everyone's attention across the web.",
+    url: 'https://www.browseping.com',
+    siteName: 'BrowsePing',
+    images: [
+      {
+        url: '/preview_image.png',
+        width: 1200,
+        height: 630,
+        alt: 'BrowsePing - Open Source Browser Extension',
+      },
+    ],
+    type: 'website',
+  },
+
+  // Twitter Card
+  twitter: {
+    card: 'summary_large_image',
+    title: "BrowsePing - Socialize Your Browsing Experience",
+    description: "Transform your solitary browsing into a vibrant social experience. Connect with friends, share your digital presence, and discover what's capturing everyone's attention across the web.",
+    images: ['/preview_image.png'],
+  },
 };
 
 export const viewport: Viewport = {
