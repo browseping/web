@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import { FiClock, FiUser, FiRefreshCw, FiAward } from 'react-icons/fi';
 
@@ -35,10 +36,13 @@ const PublicLeaderboard = () => {
           'Content-Type': 'application/json',
         },
       });
+
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
+
       const result = await response.json();
+    
       if (result.success) {
         setData(result.data);
       } else {
@@ -99,6 +103,7 @@ const PublicLeaderboard = () => {
               Community Leaderboard
             </h2>
           </div>
+
           <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center justify-center space-x-3">
               <FiRefreshCw className="animate-spin text-blue-400" size={24} />
@@ -114,6 +119,7 @@ const PublicLeaderboard = () => {
     <section className="py-20 bg-gray-900 relative">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-blue-900/10 to-gray-900 opacity-50" />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <div className="text-center mb-16">
@@ -124,6 +130,7 @@ const PublicLeaderboard = () => {
             See who&apos;s leading the pack in social browsing this month
           </p>
         </div>
+
         {/* Refresh Button */}
         <div className="flex justify-end mb-8">
           <button
@@ -134,6 +141,7 @@ const PublicLeaderboard = () => {
             <span>Refresh</span>
           </button>
         </div>
+
         {error && (
           <div className="bg-blue-900/20 border border-blue-500/50 rounded-xl p-6 mb-8 text-center">
             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -145,6 +153,7 @@ const PublicLeaderboard = () => {
             </p>
           </div>
         )}
+
         {/* Leaderboard */}
         <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden">
           {(!data?.leaderboard || data.leaderboard.length === 0) ? (
