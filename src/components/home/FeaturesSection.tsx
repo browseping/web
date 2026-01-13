@@ -102,45 +102,30 @@ const FeaturesSection = () => {
       benefits: ['Automatic tracking', 'Digital wellness insights', 'Time optimization']
     }
   ];
-  
 
-  const startAutoScroll = () => {
-  if (intervalRef.current) {
-    clearInterval(intervalRef.current);
-  }
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % features.length);
+    }, 4000);
 
-  intervalRef.current = setInterval(() => {
-    setCurrentIndex((prev) => (prev + 1) % features.length);
-  }, 8000);
-};
-
-useEffect(() => {
-  startAutoScroll();
-
-  return () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-  };
-}, [features.length]);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [features.length]);
 
   const nextSlide = () => {
-  setCurrentIndex((prev) => (prev + 1) % features.length);
-  startAutoScroll();
-};
-
+    setCurrentIndex((prev) => (prev + 1) % features.length);
+  };
 
   const prevSlide = () => {
-  setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
-  startAutoScroll();
-};
-
+    setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
+  };
 
   const goToSlide = (index: number) => {
-  setCurrentIndex(index);
-  startAutoScroll();
-};
-
+    setCurrentIndex(index);
+  };
 
   return (
     <section ref={sectionRef} className="py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
