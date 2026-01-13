@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState ,useCallback} from 'react';
 import Image from 'next/image';
 import { FiUsers, FiBarChart, FiShield, FiMessageCircle, FiGithub, FiClock, FiBell, FiWifi, FiCode, FiChevronLeft, FiChevronRight, FiZap } from 'react-icons/fi';
 import { FaTrophy } from 'react-icons/fa';
@@ -102,29 +102,41 @@ const FeaturesSection = () => {
       benefits: ['Automatic tracking', 'Digital wellness insights', 'Time optimization']
     }
   ];
+  
 
-  useEffect(() => {
+  const startAutoScroll = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % features.length);
-    }, 4000);
+    }, 8000);
+  }, [features.length]);
+
+useEffect(() => {
+    startAutoScroll();
 
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
     };
-  }, [features.length]);
+  }, [startAutoScroll]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % features.length);
+    startAutoScroll();
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
+    startAutoScroll();
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    startAutoScroll();
   };
 
   return (
