@@ -106,7 +106,7 @@ const FeaturesSection = () => {
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % features.length);
-    }, 4000);
+    }, 7000);
 
     return () => {
       if (intervalRef.current) {
