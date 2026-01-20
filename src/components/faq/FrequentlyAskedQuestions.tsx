@@ -7,17 +7,10 @@ import Image from 'next/image';
 import Snap1 from '../../assets/Snap1.png'
 import Snap2 from '../../assets/Snap2.png'
 import Snap3 from '../../assets/Snap3.png'
-import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
-import { cn } from '@/lib/utils';
-import { Accordion, AccordionContent, AccordionTrigger } from '../ui/Acord';
+import { Accordion, AccordionContent, AccordionTrigger } from '../ui/Accord';
 
 const FrequentlyAskedQuestions = () => {
 
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleAccord = () => {
-    setIsOpen(prev => !prev)
-  }
 
   return (
     <section className="py-20 bg-gray-900 min-h-screen">
@@ -49,7 +42,7 @@ const FrequentlyAskedQuestions = () => {
             <div className='text-2xl font-bold text-white '>1. How can we download BrowserPing ?</div>
           </AccordionTrigger>
           <AccordionContent>
-          <span className={cn("space-y-4 text-gray-300 text-xl")}>You can download BrowserPing by going to <a className='text-purple-500' target='./' href='https://www.browseping.com/download'>Download page.</a> There you can find links to download it for diffrent browser and versions. </span>
+          <span className="space-y-4 text-gray-300 text-xl">You can download BrowserPing by going to <a className='text-purple-500' target='./' href='https://www.browseping.com/download'>Download page.</a> There you can find links to download it for diffrent browser and versions. </span>
           </AccordionContent>
           </Accordion>
           </div>
@@ -89,12 +82,12 @@ const FrequentlyAskedQuestions = () => {
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl px-8 p-4">
             <Accordion>
                 <AccordionTrigger>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-white text-left">
                   3. Do I have control over what information others see from my browsing?
                   </div>
                   </AccordionTrigger>
                 <AccordionContent>
-                <div className='flex flex-col justify-center items-start gap-3 space-y-4 text-gray-300 text-xl'>
+                <div className='flex flex-col justify-center items-start gap-3 space-y-4 text-gray-300 text-xl pt-4'>
                     <span>Yes. With Privacy Controls, you can decide who can see your data, including Online Status, Last Seen, Tab Activity, and more.</span>
                     <span>To manage your privacy, simply navigate to your account Privacy Settings section and review the available control options.</span>
                     <span className='w-full flex justify-center'>More {'->'}  Account {'->'} Privacy & Security</span>
@@ -111,7 +104,7 @@ const FrequentlyAskedQuestions = () => {
                   <div className="text-2xl font-bold text-white">4. How does the BrowserPing leaderboard works ?</div>
                   </AccordionTrigger>
                 <AccordionContent>
-                <div className='flex flex-col justify-center items-start gap-3 space-y-4 text-gray-300 text-xl'>
+                <div className='flex flex-col justify-center items-start gap-3 space-y-4 text-gray-300 text-xl pt-4'>
                     <span>BrowserPing tracks each user&apos;s total online hours throughout the month and uses this data to automatically generate a monthly leaderboard, ranking users based on their overall activity.</span>
                     <span>Access your leaderboard by visiting the Analytics section from the main menu</span>
                     <span className='w-full flex justify-center'>Analytics {'->'}  Account {'->'} Leaderboard</span>

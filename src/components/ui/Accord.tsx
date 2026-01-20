@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { createContext, useContext, useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri';
 
@@ -74,7 +73,7 @@ export function AccordionContent({ children }: AccordionContentProps) {
 
   return (
     <span
-      className={cn(isOpen ? 'block' : 'hidden', 'space-y-4 text-gray-300 text-xl')}
+      className={`${isOpen ? "block" : "hidden"} space-y-4 text-gray-300 text-xl`}
     >
       {children}
     </span>
