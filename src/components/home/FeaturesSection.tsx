@@ -104,40 +104,39 @@ const FeaturesSection = () => {
   ];
   
 
-  const startAutoScroll = useCallback(() => {
+const startAutoScroll = useCallback(() => {
+  if (intervalRef.current) {
+    clearInterval(intervalRef.current);
+  }
+
+  intervalRef.current = setInterval(() => {
+    setCurrentIndex((prev) => (prev + 1) % features.length);
+  }, 10000);
+}, [features.length]);
+useEffect(() => {
+  startAutoScroll();
+
+  return () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
-
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % features.length);
-    }, 8000);
-  }, [features.length]);
-
-useEffect(() => {
-    startAutoScroll();
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [startAutoScroll]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % features.length);
-    startAutoScroll();
   };
+}, [startAutoScroll]);
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
-    startAutoScroll();
-  };
+ const nextSlide = () => {
+  setCurrentIndex((prev) => (prev + 1) % features.length);
+  startAutoScroll();
+};
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-    startAutoScroll();
-  };
+ const prevSlide = () => {
+  setCurrentIndex((prev) => (prev - 1 + features.length) % features.length);
+  startAutoScroll();
+};
+
+ const goToSlide = (index: number) => {
+  setCurrentIndex(index);
+  startAutoScroll();
+};
 
   return (
     <section ref={sectionRef} className="py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
