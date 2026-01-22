@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState ,useCallback} from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { FiUsers, FiBarChart, FiShield, FiMessageCircle, FiGithub, FiClock, FiBell, FiWifi, FiCode, FiChevronLeft, FiChevronRight, FiZap } from 'react-icons/fi';
 import { FaTrophy } from 'react-icons/fa';
@@ -102,7 +102,7 @@ const FeaturesSection = () => {
       benefits: ['Automatic tracking', 'Digital wellness insights', 'Time optimization']
     }
   ];
-  
+
 
 const startAutoScroll = useCallback(() => {
   if (intervalRef.current) {
@@ -153,7 +153,7 @@ useEffect(() => {
             <span className="text-blue-300 font-semibold text-lg">Open Source</span>
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
           </div>
-          
+
           <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
             <span className="text-white">The Future of </span>
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
@@ -170,7 +170,7 @@ useEffect(() => {
               vibrant social experience
             </span>
           </p>
-          
+
           {/* Open Source Badge */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl px-4 py-3 mb-12 text-sm sm:text-base">
             <div className="flex items-center space-x-2">
@@ -201,7 +201,7 @@ useEffect(() => {
                 {/* Card */}
                 <div className="hidden lg:block">
                   {features[(currentIndex - 1 + features.length) % features.length] && (
-                    <div 
+                    <div
                       className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80"
                       onClick={prevSlide}
                     >
@@ -232,7 +232,7 @@ useEffect(() => {
                         {features[currentIndex].category}
                       </span>
                     </div>
-                    
+
                     <div className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-gradient-to-br ${features[currentIndex].gradient} flex items-center justify-center mb-3 sm:mb-4 mx-auto shadow-2xl`}>
                       <div className="text-white scale-110">
                         {features[currentIndex].icon}
@@ -243,7 +243,7 @@ useEffect(() => {
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3">
                       {features[currentIndex].title}
                     </h3>
-                    
+
                     <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-4 sm:mb-6 max-w-lg mx-auto px-2 sm:px-0">
                       {features[currentIndex].detailedDescription}
                     </p>
@@ -275,7 +275,7 @@ useEffect(() => {
                 {/* Side Card */}
                 <div className="hidden lg:block">
                   {features[(currentIndex + 1) % features.length] && (
-                    <div 
+                    <div
                       className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80"
                       onClick={nextSlide}
                     >
@@ -316,11 +316,10 @@ useEffect(() => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
                     ? `bg-gradient-to-r ${features[currentIndex].gradient} scale-125`
                     : 'bg-gray-600 hover:bg-gray-500'
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -338,19 +337,19 @@ useEffect(() => {
               Show your support and help us reach more users by upvoting BrowsePing on Product Hunt!
             </p>
           </div>
-          
+
           <div className="flex justify-center">
-            <a 
-              href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping" 
-              target="_blank" 
+            <a
+              href="https://www.producthunt.com/products/browseping?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-browseping"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
-              <Image 
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
-                alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                width={250} 
-                height={54} 
+              <Image
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"
+                alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt"
+                width={250}
+                height={54}
                 className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-orange-500/50"
               />
             </a>
@@ -364,7 +363,7 @@ useEffect(() => {
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-2xl"></div>
             </div>
-            
+
             <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-2xl border border-green-500/30 rounded-3xl p-6 lg:p-8 xl:p-10 shadow-2xl">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
                 {/* Content section */}
@@ -380,12 +379,12 @@ useEffect(() => {
                       {' '}Community
                     </h3>
                   </div>
-                  
+
                   <p className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     Join developers building the future of social browsing. Contribute and help shape the project.
                   </p>
                 </div>
-                
+
                 {/* Button section */}
                 <div className="flex justify-center lg:justify-end lg:ml-8">
                   <a
