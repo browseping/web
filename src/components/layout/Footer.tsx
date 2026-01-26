@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed text-lg">
-              Transform your solitary browsing into a vibrant social experience. Connect with friends, 
+              Transform your solitary browsing into a vibrant social experience. Connect with friends,
               share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
             </p>
 
@@ -42,11 +42,11 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-block hover:scale-105 transition-transform duration-300"
               >
-                <Image 
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748" 
-                  alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt" 
-                  width={250} 
-                  height={54} 
+                <Image
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"
+                  alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt"
+                  width={250}
+                  height={54}
                   className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
               </a>
@@ -106,9 +106,9 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-purple-400 transition-colors duration-200 flex items-center space-x-2 group"
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group"
                   >
-                    <span className="w-0 h-0.5 bg-purple-400 group-hover:w-4 transition-all duration-300"></span>
+                    <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                     <span>{link.label}</span>
                   </Link>
                 </li>
