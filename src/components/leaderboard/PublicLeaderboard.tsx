@@ -42,7 +42,7 @@ const PublicLeaderboard = () => {
       }
 
       const result = await response.json();
-    
+
       if (result.success) {
         setData(result.data);
       } else {
@@ -106,7 +106,7 @@ const PublicLeaderboard = () => {
 
           <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center justify-center space-x-3">
-              <FiRefreshCw className="animate-spin text-blue-400" size={24} />
+              <FiRefreshCw className="animate-spin text-blue-400" size={24} aria-hidden="true" />
               <span className="text-white text-lg">Loading leaderboard...</span>
             </div>
           </div>
@@ -137,7 +137,7 @@ const PublicLeaderboard = () => {
             onClick={() => fetchLeaderboard()}
             className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
           >
-            <FiRefreshCw size={16} />
+            <FiRefreshCw size={16} aria-hidden="true" />
             <span>Refresh</span>
           </button>
         </div>
@@ -145,7 +145,7 @@ const PublicLeaderboard = () => {
         {error && (
           <div className="bg-blue-900/20 border border-blue-500/50 rounded-xl p-6 mb-8 text-center">
             <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FiUser className="text-blue-400" size={24} />
+              <FiUser className="text-blue-400" size={24} aria-hidden="true" />
             </div>
             <h3 className="text-xl font-bold text-blue-400 mb-2">Server Unreachable</h3>
             <p className="text-gray-400">
@@ -159,7 +159,7 @@ const PublicLeaderboard = () => {
           {(!data?.leaderboard || data.leaderboard.length === 0) ? (
             <div className="p-12 text-center">
               <div className="w-24 h-24 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FiAward className="text-blue-400" size={32} />
+                <FiAward className="text-blue-400" size={32} aria-hidden="true" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">No Data Yet</h3>
             </div>
@@ -195,7 +195,7 @@ const PublicLeaderboard = () => {
                           <div className="col-span-5">
                             <div className="flex items-center space-x-3">
                               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                                <FiUser className="text-white" size={16} />
+                                <FiUser className="text-white" size={16} aria-hidden="true" />
                               </div>
                               <div>
                                 <div className="text-white font-semibold group-hover:text-blue-400 transition-colors">
@@ -210,7 +210,7 @@ const PublicLeaderboard = () => {
                           {/* Monthly Time */}
                           <div className="col-span-2">
                             <div className="flex items-center space-x-2">
-                              <FiClock className="text-blue-400" size={16} />
+                              <FiClock className="text-blue-400" size={16} aria-hidden="true" />
                               <span className="text-white font-medium">
                                 {formatHours(user.monthlyHours)}
                               </span>

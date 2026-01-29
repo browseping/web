@@ -65,7 +65,7 @@ const Footer = () => {
                   className="w-12 h-12 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 group border border-gray-800 hover:border-gray-600"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="group-hover:animate-pulse" />
+                  <social.icon size={20} className="group-hover:animate-pulse" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -123,7 +123,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center space-x-2 text-gray-400 text-sm mt-4 md:mt-0">
             <span>Made with</span>
-            <FiHeart size={16} className="text-red-500 animate-pulse" />
+            <FiHeart size={16} className="text-red-500 animate-pulse" aria-hidden="true" />
             <span>for better browsing</span>
           </div>
         </div>

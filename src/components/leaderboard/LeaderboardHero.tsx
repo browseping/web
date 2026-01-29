@@ -23,7 +23,7 @@ const LeaderboardHero = () => {
           {/* Badge */}
           <div className={`inline-flex items-center space-x-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-            <FiAward className="text-yellow-400" size={16} />
+            <FiAward className="text-yellow-400" size={16} aria-hidden="true" />
             <span className="text-yellow-300 text-sm font-medium">Community Leaderboard</span>
           </div>
 
@@ -46,7 +46,7 @@ const LeaderboardHero = () => {
               href="/download"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
-              <FiZap size={18} />
+              <FiZap size={18} aria-hidden="true" />
               <span>Join the Competition</span>
             </a>
           </div>

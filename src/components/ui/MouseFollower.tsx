@@ -13,7 +13,7 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className = '' }) => {
   useEffect(() => {
     const follower = followerRef.current;
     const cursor = cursorRef.current;
-    
+
     if (!follower || !cursor) return;
 
     let mouseX = 0;
@@ -24,7 +24,7 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className = '' }) => {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      
+
       cursor.style.left = mouseX + 'px';
       cursor.style.top = mouseY + 'px';
     };
@@ -32,13 +32,13 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className = '' }) => {
     const animateFollower = () => {
       const dx = mouseX - followerX;
       const dy = mouseY - followerY;
-      
+
       followerX += dx * 0.1;
       followerY += dy * 0.1;
-      
+
       follower.style.left = followerX + 'px';
       follower.style.top = followerY + 'px';
-      
+
       requestAnimationFrame(animateFollower);
     };
 
@@ -55,7 +55,7 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className = '' }) => {
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
-    
+
     animateFollower();
 
     return () => {
@@ -71,11 +71,13 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className = '' }) => {
         ref={cursorRef}
         className={`fixed w-2 h-2 bg-blue-400 rounded-full pointer-events-none z-50 mix-blend-difference transition-opacity duration-300 ${className}`}
         style={{ transform: 'translate(-50%, -50%)' }}
+        aria-hidden="true"
       />
       <div
         ref={followerRef}
         className={`fixed w-8 h-8 border border-blue-400 rounded-full pointer-events-none z-50 mix-blend-difference transition-opacity duration-300 ${className}`}
         style={{ transform: 'translate(-50%, -50%)' }}
+        aria-hidden="true"
       />
     </>
   );
