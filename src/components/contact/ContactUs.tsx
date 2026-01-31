@@ -10,7 +10,7 @@ const ContactUs = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-3 bg-green-500/10 border border-green-500/20 rounded-full px-6 py-3 mb-8">
-            <FiMessageSquare className="text-green-400" size={20} />
+            <FiMessageSquare className="text-green-400" size={20} aria-hidden="true" />
             <span className="text-green-300 font-medium">Get in Touch</span>
           </div>
 
@@ -32,7 +32,7 @@ const ContactUs = () => {
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                <FiMail className="text-blue-400" size={24} />
+                <FiMail className="text-blue-400" size={24} aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">General Inquiries</h3>
@@ -48,7 +48,7 @@ const ContactUs = () => {
                 href="mailto:hello@browseping.com"
                 className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
               >
-                <FiMail size={16} />
+                <FiMail size={16} aria-hidden="true" />
                 <span>support@browseping.com</span>
               </a>
             </div>
@@ -58,7 +58,7 @@ const ContactUs = () => {
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gray-500/20 rounded-xl flex items-center justify-center">
-                <FiGithub className="text-gray-400" size={24} />
+                <FiGithub className="text-gray-400" size={24} aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">Development & Open Source</h3>
@@ -76,7 +76,7 @@ const ContactUs = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors"
               >
-                <FiGithub size={16} />
+                <FiGithub size={16} aria-hidden="true" />
                 <span>GitHub Repository</span>
               </a>
             </div>
@@ -154,7 +154,7 @@ const ContactUs = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gray-500/20 group-hover:bg-gray-500/30 rounded-lg flex items-center justify-center transition-colors">
-                        <FiGithub className="text-gray-400" size={20} />
+                        <FiGithub className="text-gray-400" size={20} aria-hidden="true" />
                       </div>
                       <div className="min-w-0">
                         <p className="text-white font-semibold group-hover:text-gray-100 transition-colors">GitHub</p>
@@ -215,7 +215,7 @@ const ContactUs = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative flex items-center space-x-3">
                     <div className="w-10 h-10 bg-red-500/20 group-hover:bg-red-500/30 rounded-lg flex items-center justify-center transition-colors">
-                      <FiMail className="text-red-400" size={20} />
+                      <FiMail className="text-red-400" size={20} aria-hidden="true" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-white font-semibold group-hover:text-red-100 transition-colors">Email</p>

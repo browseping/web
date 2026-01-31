@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const currentpath=usePathname();
+  const currentpath = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,18 +21,17 @@ const Navbar = () => {
 
   const navItems = [
     { href: '/', label: 'Home', icon: null },
-    { href: '/leaderboard', label: 'Leaderboard', icon: <FiBarChart size={16} /> },
-    { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} /> },
+    { href: '/leaderboard', label: 'Leaderboard', icon: <FiBarChart size={16} aria-hidden="true" /> },
+    { href: '/privacy', label: 'Privacy', icon: <FiShield size={16} aria-hidden="true" /> },
     { href: '/terms', label: 'Terms', icon: null },
     { href: '/contact', label: 'Contact', icon: null },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-gray-900/95 backdrop-blur-lg border-b border-gray-800' 
+    <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${scrolled
+        ? 'bg-gray-900/95 backdrop-blur-lg border-b border-gray-800'
         : 'bg-transparent'
-    }`}>
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -54,9 +53,8 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center space-x-1 transition-all duration-200 font-medium relative group ${
-                  currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400'
-                }`}
+                className={`flex items-center space-x-1 transition-all duration-200 font-medium relative group ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400'
+                  }`}
               >
                 {item.icon}
                 <span>{item.label}</span>
@@ -73,7 +71,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
             >
-              <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" />
+              <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <span>Contribute</span>
             </a>
             <Link
@@ -81,7 +79,7 @@ const Navbar = () => {
               className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 transition-opacity duration-300"></div>
-              <FiDownload size={16} className="relative z-10" />
+              <FiDownload size={16} className="relative z-10" aria-hidden="true" />
               <span className="relative z-10">Download</span>
             </Link>
           </div>
@@ -91,8 +89,10 @@ const Navbar = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-300 hover:text-blue-400 transition-colors p-2"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+              {isMenuOpen ? <FiX size={24} aria-hidden="true" /> : <FiMenu size={24} aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -105,9 +105,8 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${
-                    currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
-                  }`}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.icon}
@@ -121,7 +120,7 @@ const Navbar = () => {
                 className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <FiGithub size={16} />
+                <FiGithub size={16} aria-hidden="true" />
                 <span>Contribute</span>
               </a>
               <Link
@@ -129,7 +128,7 @@ const Navbar = () => {
                 className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-semibold mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <FiDownload size={16} />
+                <FiDownload size={16} aria-hidden="true" />
                 <span>Download</span>
               </Link>
             </div>
