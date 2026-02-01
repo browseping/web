@@ -1,5 +1,7 @@
 'use client';
 
+import { FiSun, FiMoon } from 'react-icons/fi';
+import { useTheme } from '@/hooks/useTheme';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX, FiDownload, FiBarChart, FiShield, FiGithub } from 'react-icons/fi';
@@ -9,6 +11,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const currentpath=usePathname();
+
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,18 +34,18 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
       scrolled 
-        ? 'bg-gray-900/95 backdrop-blur-lg border-b border-gray-800' 
+        ? 'bg-[var(--background)]/95 backdrop-blur-lg border-b border-black/10 dark:border-white/10' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-[var(--foreground)]">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out group-hover:-rotate-[12deg] group-hover:scale-110 group-hover:shadow-xl">
               <span className="text-white text-xl font-bold">BP</span>
             </div>
             <div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="gradient-text text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                 BrowsePing
               </span>
               <div className="text-xs text-gray-400 -mt-1">Socialize Your Browsing</div>
@@ -67,11 +71,18 @@ const Navbar = () => {
 
           {/* Action Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                className="p-3 rounded-xl text-gray-300 hover:text-yellow-400 transition-all duration-200 hover:rotate-[20deg] hover:scale-125"
+              >
+              {isDark ? <FiSun size={22} /> : <FiMoon size={22} />}
+              </button>
             <a
               href="https://github.com/browseping"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 group"
             >
               <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" />
               <span>Contribute</span>
