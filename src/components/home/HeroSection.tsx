@@ -33,17 +33,22 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section
-      ref={heroRef}
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-purple-900/20 relative overflow-hidden flex items-center pt-20"
-    >
-      {/* Animated gradient background */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.3) 0%, transparent 50%)`
-        }}
-      />
+  <section
+    ref={heroRef}
+    className="min-h-screen relative overflow-hidden flex items-center pt-20 text-[var(--foreground)]"
+    style={{ background: 'var(--hero-bg)' }}
+  >
+    {/* Animated gradient background */}
+    <div
+      className="absolute inset-0 opacity-20 dark:opacity-30"
+      style={{
+        background: `radial-gradient(
+          circle at ${mousePosition.x}% ${mousePosition.y}%,
+          rgba(59, 130, 246, 0.3) 0%,
+          transparent 50%
+        )`
+      }}
+    />
 
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-40" style={{
@@ -59,7 +64,7 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 border border-green-500/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 bg-gray-900/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm border dark:border-black/100 ease-out hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] hover:-translate-y-0.4 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
             <FiGithub className="text-green-400" size={18} aria-hidden="true" />
             <span className="text-green-300 text-sm font-semibold">Open Source</span>
@@ -157,11 +162,11 @@ const HeroSection = () => {
               className="inline-block hover:scale-105 transition-transform duration-300 group"
             >
               <Image
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"
+                src= "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark"
                 alt="BrowsePing - Socialize your presence and make browsing insightful. | Product Hunt"
                 width={250}
                 height={54}
-                className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-gray-600/50"
+                className="rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
               />
             </a>
           </div>
