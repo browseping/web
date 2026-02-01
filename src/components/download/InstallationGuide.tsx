@@ -160,30 +160,27 @@ const InstallationGuide = () => {
     <section id="installation-guide" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Installation Guide
             </span>
           </h2>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
+          <p className={`text-xl text-gray-300 max-w-3xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
             Follow these simple steps to manually install BrowsePing extension
           </p>
         </div>
 
         {/* Prerequisites */}
-        <div className={`mb-16 transition-all duration-1000 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`mb-16 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Prerequisites</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {prerequisites.map((step, index) => (
               <div key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="text-purple-400" size={24} />
+                  <step.icon className="text-purple-400" size={24} aria-hidden="true" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">{step.title}</h4>
                 <p className="text-gray-400">{step.description}</p>
@@ -193,20 +190,18 @@ const InstallationGuide = () => {
         </div>
 
         {/* Browser Selection */}
-        <div className={`mb-12 transition-all duration-1000 delay-600 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`mb-12 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Select Your Browser</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {browsers.map((browser) => (
               <button
                 key={browser.id}
                 onClick={() => setSelectedBrowser(browser.id)}
-                className={`flex items-center space-x-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  selectedBrowser === browser.id
+                className={`flex items-center space-x-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${selectedBrowser === browser.id
                     ? `bg-gradient-to-r ${browser.color} text-white shadow-lg`
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
-                }`}
+                  }`}
               >
                 <span>{browser.icon}</span>
                 <span>{browser.name}</span>
@@ -216,13 +211,12 @@ const InstallationGuide = () => {
         </div>
 
         {/* Installation Steps */}
-        <div className={`transition-all duration-1000 delay-800 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <h3 className="text-2xl font-bold text-white mb-8 text-center">
             Installation Steps for {browsers.find(b => b.id === selectedBrowser)?.name}
           </h3>
-          
+
           <div className="max-w-4xl mx-auto">
             {getSteps(selectedBrowser).map((step, index) => (
               <div key={index} className="flex items-start space-x-6 mb-8 group">
@@ -234,7 +228,7 @@ const InstallationGuide = () => {
                 <div className="flex-grow">
                   <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 group-hover:border-indigo-500/50 transition-all duration-300">
                     <div className="flex items-center space-x-3 mb-3">
-                      <step.icon className="text-indigo-400" size={24} />
+                      <step.icon className="text-indigo-400" size={24} aria-hidden="true" />
                       <h4 className="text-xl font-semibold text-white">{step.title}</h4>
                     </div>
                     <p className="text-gray-300 mb-2">{step.description}</p>
@@ -243,7 +237,7 @@ const InstallationGuide = () => {
                 </div>
                 {index < getSteps(selectedBrowser).length - 1 && (
                   <div className="flex-shrink-0 pt-6">
-                    <FiChevronRight className="text-gray-600" size={20} />
+                    <FiChevronRight className="text-gray-600" size={20} aria-hidden="true" />
                   </div>
                 )}
               </div>
@@ -253,7 +247,7 @@ const InstallationGuide = () => {
           {/* Success message */}
           <div className="mt-12 text-center">
             <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-xl p-6 max-w-2xl mx-auto">
-              <FiCheckCircle className="text-green-400 mx-auto mb-4" size={48} />
+              <FiCheckCircle className="text-green-400 mx-auto mb-4" size={48} aria-hidden="true" />
               <h4 className="text-xl font-semibold text-white mb-2">Installation Complete!</h4>
               <p className="text-gray-300">
                 You should now see BrowsePing in your browser toolbar. Click the icon to start socializing your browsing experience!

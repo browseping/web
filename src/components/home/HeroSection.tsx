@@ -66,7 +66,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 bg-gray-900/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm border dark:border-black/100 ease-out hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] hover:-translate-y-0.4 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-            <FiGithub className="text-green-400" size={18} />
+            <FiGithub className="text-green-400" size={18} aria-hidden="true" />
             <span className="text-green-300 text-sm font-semibold">Open Source</span>
             <div className="w-1 h-1 bg-green-400 rounded-full"></div>
             <span className="text-blue-300 text-sm font-medium">Browser Extension</span>
@@ -109,7 +109,7 @@ const HeroSection = () => {
             ].map((feature, index) => (
               <div key={index} className="flex items-center space-x-2 group cursor-pointer">
                 <div className="p-2 rounded-lg bg-gray-800/50 group-hover:bg-gray-700/50 transition-colors">
-                  <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} />
+                  <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} aria-hidden="true" />
                 </div>
                 <span className="text-gray-300 group-hover:text-white transition-colors">{feature.text}</span>
               </div>
@@ -127,9 +127,9 @@ const HeroSection = () => {
                 className={`bg-gradient-to-r ${detectedBrowser.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden`}
               >
                 <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700" />
-                <FiDownload size={20} className="group-hover:animate-bounce" />
+                <FiDownload size={20} className="group-hover:animate-bounce" aria-hidden="true" />
                 <span>Download for {detectedBrowser.name}</span>
-                <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             ) : (
               <Link
@@ -137,9 +137,9 @@ const HeroSection = () => {
                 className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700" />
-                <FiDownload size={20} className="group-hover:animate-bounce" />
+                <FiDownload size={20} className="group-hover:animate-bounce" aria-hidden="true" />
                 <span>Choose Your Browser</span>
-                <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </Link>
             )}
 
@@ -147,7 +147,7 @@ const HeroSection = () => {
               href="/download"
               className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-900/20"
             >
-              <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
+              <FiDownload size={20} className="group-hover:rotate-12 transition-transform" aria-hidden="true" />
               <span>All Download Options</span>
             </Link>
           </div>

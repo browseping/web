@@ -76,7 +76,7 @@ const Footer = () => {
                   border border-black/10 dark:border-gray-700 text-black/70 dark:text-gray-300 hover:text-black dark:hover:text-white"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="group-hover:animate-pulse" />
+                  <social.icon size={20} className="group-hover:animate-pulse" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -137,7 +137,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center space-x-2 opacity-60 text-sm mt-4 md:mt-0">
             <span>Made with</span>
-            <FiHeart size={16} className="text-red-500 animate-pulse" />
+            <FiHeart size={16} className="text-red-500 animate-pulse" aria-hidden="true" />
             <span>for better browsing</span>
           </div>
         </div>
