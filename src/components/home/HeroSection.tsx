@@ -119,7 +119,7 @@ const HeroSection = () => {
                 href={detectedBrowser.downloadUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`bg-gradient-to-r ${detectedBrowser.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden`}
+                className={`bg-gradient-to-r ${detectedBrowser.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}
               >
                 <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700" />
                 <FiDownload size={20} className="group-hover:animate-bounce" aria-hidden="true" />
@@ -129,7 +129,7 @@ const HeroSection = () => {
             ) : (
               <Link
                 href="/download"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
               >
                 <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700" />
                 <FiDownload size={20} className="group-hover:animate-bounce" aria-hidden="true" />
@@ -140,7 +140,7 @@ const HeroSection = () => {
 
             <Link
               href="/download"
-              className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-900/20"
+              className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-900/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             >
               <FiDownload size={20} className="group-hover:rotate-12 transition-transform" aria-hidden="true" />
               <span>All Download Options</span>
@@ -155,6 +155,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
+              title="BrowsePing on Product Hunt"
             >
               <Image
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"
@@ -169,7 +170,7 @@ const HeroSection = () => {
           {/* Browser Support */}
           <div className={`transition-all duration-1000 delay-1300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-            <p className="text-gray-400 mb-6 text-lg">Available for all major browsers</p>
+            <p className="text-gray-300 mb-6 text-lg">Available for all major browsers</p>
             <div className="flex justify-center items-center space-x-12">
               {allBrowsers.map((browser, index) => (
                 <div
@@ -180,7 +181,7 @@ const HeroSection = () => {
                   <div className="text-4xl group-hover:scale-125 group-hover:animate-pulse transition-all duration-300">
                     {browser.icon}
                   </div>
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
+                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
                     {browser.name}
                   </span>
                 </div>

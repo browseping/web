@@ -183,7 +183,7 @@ const InstallationGuide = () => {
                   <step.icon className="text-purple-400" size={24} aria-hidden="true" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mb-2">{step.title}</h4>
-                <p className="text-gray-400">{step.description}</p>
+                <p className="text-gray-300">{step.description}</p>
               </div>
             ))}
           </div>

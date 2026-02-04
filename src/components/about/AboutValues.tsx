@@ -30,7 +30,7 @@ const AboutValues = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Our Core Values</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             The principles that guide everything we do at BrowsePing.
           </p>
         </div>
@@ -43,7 +43,7 @@ const AboutValues = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed">
                   {value.description}
                 </p>
               </div>

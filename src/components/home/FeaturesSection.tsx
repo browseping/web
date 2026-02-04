@@ -194,7 +194,8 @@ const FeaturesSection = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <button
                   onClick={prevSlide}
-                  className="flex items-center justify-center w-16 h-16 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30"
+                  className="flex items-center justify-center w-16 h-16 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                  aria-label="Previous feature"
                 >
                   <FiChevronLeft className="text-gray-300 group-hover:text-white transition-colors" size={24} />
                 </button>
@@ -202,9 +203,10 @@ const FeaturesSection = () => {
                 {/* Card */}
                 <div className="hidden lg:block">
                   {features[(currentIndex - 1 + features.length) % features.length] && (
-                    <div
-                      className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80"
+                    <button
+                      className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                       onClick={prevSlide}
+                      aria-label={`View ${features[(currentIndex - 1 + features.length) % features.length].title} feature`}
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${features[(currentIndex - 1 + features.length) % features.length].gradient} flex items-center justify-center mb-4`}>
                         <div className="text-white scale-75">
@@ -214,10 +216,10 @@ const FeaturesSection = () => {
                       <h4 className="text-lg font-bold text-white mb-2">
                         {features[(currentIndex - 1 + features.length) % features.length].title}
                       </h4>
-                      <p className="text-sm text-gray-400 line-clamp-3">
+                      <p className="text-sm text-gray-300 line-clamp-3">
                         {features[(currentIndex - 1 + features.length) % features.length].description}
                       </p>
-                    </div>
+                    </button>
                   )}
                 </div>
               </div>
@@ -229,7 +231,7 @@ const FeaturesSection = () => {
                   <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center space-x-2 mb-2 sm:mb-3">
                       <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${features[currentIndex].gradient}`}></div>
-                      <span className="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                      <span className="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-wider">
                         {features[currentIndex].category}
                       </span>
                     </div>
@@ -260,9 +262,9 @@ const FeaturesSection = () => {
                     </div>
 
                     {/* Action Button */}
-                    <button className={`inline-flex items-center space-x-3 bg-gradient-to-r ${features[currentIndex].gradient} hover:shadow-xl text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 group text-sm sm:text-base`}>
+                    <button className={`inline-flex items-center space-x-3 bg-gradient-to-r ${features[currentIndex].gradient} hover:shadow-xl text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 group text-sm sm:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}>
                       <span>Explore Feature</span>
-                      <FiZap className="group-hover:scale-110 transition-transform duration-300" size={16} />
+                      <FiZap className="group-hover:scale-110 transition-transform duration-300" size={16} aria-hidden="true" />
                     </button>
                   </div>
 
@@ -276,9 +278,10 @@ const FeaturesSection = () => {
                 {/* Side Card */}
                 <div className="hidden lg:block">
                   {features[(currentIndex + 1) % features.length] && (
-                    <div
-                      className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80"
+                    <button
+                      className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                       onClick={nextSlide}
+                      aria-label={`View ${features[(currentIndex + 1) % features.length].title} feature`}
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${features[(currentIndex + 1) % features.length].gradient} flex items-center justify-center mb-4`}>
                         <div className="text-white scale-75">
@@ -288,16 +291,17 @@ const FeaturesSection = () => {
                       <h4 className="text-lg font-bold text-white mb-2">
                         {features[(currentIndex + 1) % features.length].title}
                       </h4>
-                      <p className="text-sm text-gray-400 line-clamp-3">
+                      <p className="text-sm text-gray-300 line-clamp-3">
                         {features[(currentIndex + 1) % features.length].description}
                       </p>
-                    </div>
+                    </button>
                   )}
                 </div>
 
                 <button
                   onClick={nextSlide}
-                  className="flex items-center justify-center w-16 h-16 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30"
+                  className="flex items-center justify-center w-16 h-16 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+                  aria-label="Next feature"
                 >
                   <FiChevronRight className="text-gray-300 group-hover:text-white transition-colors" size={24} />
                 </button>
@@ -317,10 +321,11 @@ const FeaturesSection = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 ${index === currentIndex
                     ? `bg-gradient-to-r ${features[currentIndex].gradient} scale-125`
                     : 'bg-gray-600 hover:bg-gray-500'
                   }`}
+                aria-label={`Go to ${features[index].title} feature`}
               />
             ))}
           </div>
@@ -345,6 +350,7 @@ const FeaturesSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block hover:scale-105 transition-transform duration-300 group"
+              aria-label="View BrowsePing on Product Hunt"
             >
               <Image
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"

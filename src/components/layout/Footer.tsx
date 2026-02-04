@@ -26,7 +26,7 @@ const Footer = () => {
                 <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   BrowsePing
                 </span>
-                <div className="text-sm text-gray-400">Socialize Your Browsing</div>
+                <div className="text-sm text-gray-300">Socialize Your Browsing</div>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed text-lg">
@@ -41,6 +41,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block hover:scale-105 transition-transform duration-300"
+                title="BrowsePing on Product Hunt"
               >
                 <Image
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030190&theme=dark&t=1761421790748"
@@ -62,7 +63,7 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-12 h-12 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 group border border-gray-800 hover:border-gray-600"
+                  className="w-12 h-12 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-300 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 group border border-gray-800 hover:border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
                   aria-label={social.label}
                 >
                   <social.icon size={20} className="group-hover:animate-pulse" aria-hidden="true" />
@@ -84,7 +85,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group"
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950 rounded-md px-2 py-1"
                   >
                     <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                     <span>{link.label}</span>
@@ -118,10 +119,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm">
+          <div className="text-gray-300 text-sm">
             © {currentYear} BrowsePing. All rights reserved.
           </div>
-          <div className="flex items-center space-x-2 text-gray-400 text-sm mt-4 md:mt-0">
+          <div className="flex items-center space-x-2 text-gray-300 text-sm mt-4 md:mt-0">
             <span>Made with</span>
             <FiHeart size={16} className="text-red-500 animate-pulse" aria-hidden="true" />
             <span>for better browsing</span>

@@ -36,7 +36,7 @@ const ContactUs = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">General Inquiries</h3>
-                <p className="text-gray-400">Questions, feedback, and support</p>
+                <p className="text-gray-300">Questions, feedback, and support</p>
               </div>
             </div>
 
@@ -58,11 +58,11 @@ const ContactUs = () => {
           <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-12 bg-gray-500/20 rounded-xl flex items-center justify-center">
-                <FiGithub className="text-gray-400" size={24} aria-hidden="true" />
+                <FiGithub className="text-gray-300" size={24} aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">Development & Open Source</h3>
-                <p className="text-gray-400">Contributing to the project</p>
+                <p className="text-gray-300">Contributing to the project</p>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ const ContactUs = () => {
 
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">Akash Kumar</h3>
-                  <p className="text-gray-400 font-medium">Main Developer</p>
+                  <p className="text-gray-300 font-medium">Main Developer</p>
                 </div>
               </div>
 
@@ -154,11 +154,11 @@ const ContactUs = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gray-500/20 group-hover:bg-gray-500/30 rounded-lg flex items-center justify-center transition-colors">
-                        <FiGithub className="text-gray-400" size={20} aria-hidden="true" />
+                        <FiGithub className="text-gray-300" size={20} aria-hidden="true" />
                       </div>
                       <div className="min-w-0">
                         <p className="text-white font-semibold group-hover:text-gray-100 transition-colors">GitHub</p>
-                        <p className="text-gray-400 text-sm font-medium">@akash-kumar-dev</p>
+                        <p className="text-gray-300 text-sm font-medium">@akash-kumar-dev</p>
                       </div>
                     </div>
                   </a>

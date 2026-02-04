@@ -148,7 +148,7 @@ const PublicLeaderboard = () => {
               <FiUser className="text-blue-400" size={24} aria-hidden="true" />
             </div>
             <h3 className="text-xl font-bold text-blue-400 mb-2">Server Unreachable</h3>
-            <p className="text-gray-400">
+            <p className="text-gray-300">
               Unable to load leaderboard data at the moment.
             </p>
           </div>
@@ -170,7 +170,7 @@ const PublicLeaderboard = () => {
                 <div className="min-w-[600px]">
                   {/* Header */}
                   <div className="bg-gray-800/50 px-6 py-4 border-b border-gray-700">
-                    <div className="grid grid-cols-10 gap-4 text-gray-400 text-sm font-medium">
+                    <div className="grid grid-cols-10 gap-4 text-gray-300 text-sm font-medium">
                       <div className="col-span-1">Rank</div>
                       <div className="col-span-5">User</div>
                       <div className="col-span-2">Monthly Time</div>
@@ -231,7 +231,7 @@ const PublicLeaderboard = () => {
               {/* Footer */}
               {data.totalUsers > 0 && (
                 <div className="bg-gray-800/30 px-6 py-4 border-t border-gray-700">
-                  <p className="text-gray-400 text-center">
+                  <p className="text-gray-300 text-center">
                     Showing top {data.leaderboard.length} of {data.totalUsers} active users
                   </p>
                 </div>
