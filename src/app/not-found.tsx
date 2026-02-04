@@ -14,7 +14,7 @@ export default function NotFound() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-4">
             Oops! Page Not Found
           </h2>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-gray-300 mb-8">
             The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
 

@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
             This policy explains how we collect, use, and protect your information.
           </p>
 
-          <div className="mt-6 text-sm text-gray-400">
+          <div className="mt-6 text-sm text-gray-300">
             <p>Last updated: October 2025</p>
           </div>
         </div>
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
                   <li>• Active tab information when you choose to share</li>
                   <li>• Online presence status</li>
                 </ul>
-                <p className="text-sm text-gray-400 mt-2">
+                <p className="text-sm text-gray-300 mt-2">
                   <strong>Note:</strong> All browsing data sharing is completely optional and controlled by your privacy settings.
                 </p>
               </div>
@@ -205,19 +205,19 @@ const PrivacyPolicy = () => {
               </p>
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
                   <span><strong>Full Transparency:</strong> All source code is publicly available on GitHub for review and audit</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
                   <span><strong>Community Driven:</strong> Development is transparent and community contributions are welcome</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
                   <span><strong>No Hidden Code:</strong> There are no proprietary or closed-source components that could compromise your privacy</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
                   <span><strong>Self-Hostable:</strong> You can run your own instance if you prefer complete control</span>
                 </div>
               </div>

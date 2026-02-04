@@ -43,7 +43,7 @@ const Navbar = () => {
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 BrowsePing
               </span>
-              <div className="text-xs text-gray-400 -mt-1">Socialize Your Browsing</div>
+              <div className="text-xs text-gray-300 -mt-1">Socialize Your Browsing</div>
             </div>
           </Link>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center space-x-1 transition-all duration-200 font-medium relative group ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400'
+                className={`flex items-center space-x-1 transition-all duration-200 font-medium relative group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded-md px-2 py-1 ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400'
                   }`}
               >
                 {item.icon}
@@ -69,14 +69,14 @@ const Navbar = () => {
               href="https://github.com/browseping"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             >
               <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <span>Contribute</span>
             </a>
             <Link
               href="/download"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 relative overflow-hidden group"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 transition-opacity duration-300"></div>
               <FiDownload size={16} className="relative z-10" aria-hidden="true" />
@@ -88,7 +88,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-blue-400 transition-colors p-2"
+              className="text-gray-300 hover:text-blue-400 transition-colors p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded-md"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >
@@ -105,7 +105,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
                     }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -117,7 +117,7 @@ const Navbar = () => {
                 href="https://github.com/browseping"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2"
+                className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <FiGithub size={16} aria-hidden="true" />
@@ -125,7 +125,7 @@ const Navbar = () => {
               </a>
               <Link
                 href="/download"
-                className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-semibold mt-4"
+                className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-semibold mt-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <FiDownload size={16} aria-hidden="true" />

@@ -119,7 +119,7 @@ const PlatformsList = () => {
                     href={detectedPlatform.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r ${detectedPlatform.color} hover:brightness-110 transition-all text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-900 focus:outline-none`}
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r ${detectedPlatform.color} hover:brightness-110 transition-all text-white font-medium shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}
                   >
                     <FiDownload size={18} />
                     <span>Download for {detectedPlatform.name}</span>
@@ -143,7 +143,7 @@ const PlatformsList = () => {
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block h-[300px] p-6 rounded-2xl bg-gradient-to-br ${platform.color} ${platform.hover} transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}
+                className={`block h-[300px] p-6 rounded-2xl bg-gradient-to-br ${platform.color} ${platform.hover} transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900`}
               >
                 <div className="text-center flex flex-col justify-between h-full">
                   <div className="mb-4">
