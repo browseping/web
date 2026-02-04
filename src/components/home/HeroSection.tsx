@@ -64,18 +64,34 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Badge */}
-          <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 bg-gray-900/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm border dark:border-black/100 ease-out hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] hover:-translate-y-0.4 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-            <FiGithub className="text-green-400" size={18} />
-            <span className="text-green-300 text-sm font-semibold">Open Source</span>
-            <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-            <span className="text-blue-300 text-sm font-medium">Browser Extension</span>
+          <div
+              className={`inline-flex items-center space-x-3
+                bg-gradient-to-r from-blue-700/22 via-purple-600/25 to-cyan-500/30
+                rounded-full px-6 py-3 mb-8
+                backdrop-blur-sm hover:backdrop-blur-md
+                border border-black/70
+                hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]
+                hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]
+                hover:drop-shadow-[0_0_18px_rgba(0,0,0,0.25)]
+                hover:-translate-y-0.5
+                transition-all duration-300 ease-out
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+              `}
+            >
+            <FiGithub className="text-green-600" size={18} />
+            <span className="text-green-600 text-sm font-semibold">Open Source</span>
+            <div className="w-1 h-1 bg-green-600 rounded-full"></div>
+            <span className="text-yellow-600 text-sm font-medium">Browser Extension</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-            <span className={`block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}>
+            <span
+              className={`block text-[var(--foreground)]
+                transition-all duration-1000 delay-300
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+              `}
+            >
               Socialize
             </span>
             <span className={`block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -85,8 +101,8 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className={`text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
+          <p className={`text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+            `} style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}>
             The{' '}
             <span className="text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text font-bold">
               open-source
@@ -99,19 +115,20 @@ const HeroSection = () => {
           </p>
 
           {/* Key Features */}
-          <div className={`flex flex-wrap justify-center items-center gap-8 mb-12 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          <div className={`flex flex-wrap justify-center items-center gap-8 mb-12 allow-colors transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
             {[
-              { icon: FiGithub, text: 'Open Source', color: 'text-green-400' },
-              { icon: FiUsers, text: 'Social Presence', color: 'text-blue-400' },
-              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-400' },
-              { icon: FiShield, text: 'Privacy First', color: 'text-purple-400' }
+              { icon: FiGithub, text: 'Open Source', color: 'text-green-500' },
+              { icon: FiUsers, text: 'Social Presence', color: 'text-blue-600' },
+              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-600' },
+              { icon: FiShield, text: 'Privacy First', color: 'text-purple-500' }
             ].map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2 group cursor-pointer">
-                <div className="p-2 rounded-lg bg-gray-800/50 group-hover:bg-gray-700/50 transition-colors">
+              <div key={index} className="flex items-center space-x-2 group cursor-pointer transition-transform duration-200
+              hover:scale-[1.1]">
+                <div className="p-2 rounded-lg bg-[color:color-mix(in srgb, var(--foreground) 12%, transparent)] group-hover:bg-[color:color-mix(in srgb, var(--foreground) 18%, transparent)] transition-colors">
                   <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors">{feature.text}</span>
+                <span className="transition-colors" style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}>{feature.text}</span>
               </div>
             ))}
           </div>
@@ -145,7 +162,7 @@ const HeroSection = () => {
 
             <Link
               href="/download"
-              className="border-2 border-gray-600 text-gray-300 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-blue-500 hover:text-blue-400 hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-900/20"
+              className="border-2 border-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-600/40 hover:bg-gray-700/50" style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}
             >
               <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
               <span>All Download Options</span>
@@ -174,7 +191,7 @@ const HeroSection = () => {
           {/* Browser Support */}
           <div className={`transition-all duration-1000 delay-1300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-            <p className="text-gray-400 mb-6 text-lg">Available for all major browsers</p>
+            <p className="text-[var(--foreground)] mb-6 text-lg">Available for all major browsers</p>
             <div className="flex justify-center items-center space-x-12">
               {allBrowsers.map((browser, index) => (
                 <div
@@ -182,10 +199,10 @@ const HeroSection = () => {
                   className="flex flex-col items-center space-y-2 group cursor-pointer"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="text-4xl group-hover:scale-125 group-hover:animate-pulse transition-all duration-300">
+                  <div className="text-4xl group-hover:scale-135 group-hover:animate-pulse transition-all duration-300">
                     {browser.icon}
                   </div>
-                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
+                  <span className="text-sm group-hover:text-[var(--foreground)] transition-colors" style={{ color: 'rgba(var(--foreground-rgb), 0.7)' }}>
                     {browser.name}
                   </span>
                 </div>

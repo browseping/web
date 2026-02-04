@@ -28,18 +28,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="flex items-center space-x-3 mb-6 group">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 ease-out group-hover:-rotate-[12deg] group-hover:scale-110 group-hover:shadow-2xl"
+            >
                 <span className="text-2xl font-bold">BP</span>
               </div>
               <div>
                 <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   BrowsePing
                 </span>
-                <div className="text-sm opacity-70">Socialize Your Browsing</div>
+                <div className="text-sm opacity-80">Socialize Your Browsing</div>
               </div>
             </div>
-            <p className="opacity-80 mb-6 max-w-md leading-relaxed text-lg">
+            <p className="opacity-90 mb-6 max-w-md leading-relaxed text-lg">
               Transform your solitary browsing into a vibrant social experience. Connect with friends,
               share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
             </p>
@@ -72,8 +73,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 bg-black/5 dark:bg-gray-800/60 hover:bg-black/10 dark:hover:bg-gray-700/60
-                  border border-black/10 dark:border-gray-700 text-black/70 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 bg-black/5 dark:bg-gray-600/40 hover:bg-black/10 dark:hover:bg-gray-700/60
+                  border border-black/10 dark:border-gray-700 text-[color:rgba(var(--foreground-rgb),0.9)]"
                   aria-label={social.label}
                 >
                   <social.icon size={20} className="group-hover:animate-pulse" />
@@ -132,10 +133,10 @@ const Footer = () => {
 
         <div className="border-t border-[color:rgba(0,0,0,0.1)] dark:border-gray-800
         mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="opacity-60 text-sm">
+          <div className="opacity-80 text-sm">
             © {currentYear} BrowsePing. All rights reserved.
           </div>
-          <div className="flex items-center space-x-2 opacity-60 text-sm mt-4 md:mt-0">
+          <div className="flex items-center space-x-2 opacity-80 text-sm mt-4 md:mt-0">
             <span>Made with</span>
             <FiHeart size={16} className="text-red-500 animate-pulse" />
             <span>for better browsing</span>

@@ -9,16 +9,17 @@ export function useTheme() {
 
   // Load saved theme on mount
   useEffect(() => {
-    const storedTheme = localStorage.getItem(THEME_KEY);
+  const storedTheme = localStorage.getItem(THEME_KEY);
 
-    if (storedTheme === 'dark') {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    } else if (storedTheme === 'light') {
-      setIsDark(false);
-      document.documentElement.classList.remove('dark');
-    }
-  }, []);
+  if (storedTheme === 'dark') {
+    setIsDark(true);
+    document.documentElement.classList.add('dark');
+  } else {
+    // DEFAULT = LIGHT
+    setIsDark(false);
+    document.documentElement.classList.remove('dark');
+  }
+}, []);
 
   // Update DOM + storage when toggled
   const toggleTheme = () => {

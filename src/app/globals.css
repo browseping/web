@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --foreground-rgb: 23, 23, 23;
+  --background-rgb: 255, 255, 255;
 }
 
 @theme inline {
@@ -15,6 +17,8 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --foreground-rgb: 237, 237, 237;
+  --background-rgb: 10, 10, 10;
 }
 
 /* LIGHT MODE BACKGROUND */
@@ -61,8 +65,8 @@ body {
 }
 
 /* Override hardcoded text colors */
-body *:not(.gradient-text) {
-  color: inherit;
+.theme-root {
+  color: var(--foreground);
 }
 
 /* Makes the sections to use theme background colors */
