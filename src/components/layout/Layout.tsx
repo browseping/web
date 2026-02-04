@@ -10,7 +10,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 relative">
+    <div className="min-h-screen flex flex-col bg-[var(--background)] relative theme-root">
       <MouseFollower />
       <AnimatedBackground />
       <Navbar />

@@ -7,6 +7,7 @@ import { FaTrophy } from 'react-icons/fa';
 
 const FeaturesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -123,6 +124,27 @@ const FeaturesSection = () => {
     };
   }, [startAutoScroll]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % features.length);
     startAutoScroll();
@@ -150,20 +172,37 @@ const FeaturesSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center space-x-3 bg-[color:rgba(255,255,255,0.75)] dark:bg-gray-900/20 rounded-full px-8 py-4 mb-8 backdrop-blur-2xl border dark:border-white/100 border-black/100 ease-out dark:hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.6)] hover:-translate-y-0.5 transition-all duration-300">
-            <FiGithub className="text-blue-600 dark:text-blue-400" size={24} />
-            <span className="text-blue-600 dark:text-blue-300 font-semibold text-lg">
-            Open Source</span>
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <div
+            className={`inline-flex items-center space-x-3
+              bg-gradient-to-r from-blue-500/25 via-purple-500/20 to-cyan-500/26
+              rounded-full px-6 py-3
+              backdrop-blur-sm hover:backdrop-blur-md
+              border border-black/70
+              hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]
+              hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]
+              hover:drop-shadow-[0_0_18px_rgba(0,0,0,0.25)]
+              hover:-translate-y-0.5
+              transition-all duration-300 ease-out
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+            `}
+          >
+            <FiGithub className="text-blue-600" size={24} />
+            <span className="text-blue-500 font-semibold text-lg">
+              Open Source
+            </span>
+            <div className="w-2 h-2 bg-green-600 rounded-full animate-pulse" />
           </div>
+        </div>
 
+          <div className="text-center max-w-5xl mx-auto">
           <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
             <span className="text-[var(--foreground)]">The Future of </span>
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-300 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
               Social Browsing
             </span>
           </h2>
-          <p className="text-2xl text-[color:rgba(0,0,0,0.7)] dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+
+          <p className="text-2xl leading-relaxed mb-8" style={{ color: 'var(--foreground)', opacity: 0.9 }}>
             BrowsePing is an{' '}
             <span className="text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text font-bold">
               open-source
@@ -173,17 +212,19 @@ const FeaturesSection = () => {
               vibrant social experience
             </span>
           </p>
+          </div>
 
           {/* Open Source Badge */}
-          <div className="flex flex-col sm:flex-row items-center justify-center w-[900px] mx-auto space-y-2 sm:space-y-0 sm:space-x-4 bg-[color:rgba(0,0,0,0.04)] dark:bg-gray-900/20 backdrop-blur-sm border border-[color:rgba(0,0,0,0.08)] dark:border-gray-700/50 rounded-2xl px-4 py-3 mb-12 text-sm sm:text-base">
+          <div className="flex flex-col sm:flex-row items-center justify-center max-w-4xl mx-auto space-y-2 sm:space-y-0 sm:space-x-4 backdrop-blur-sm border rounded-2xl px-4 py-3 mb-12 text-sm sm:text-base" style={{ backgroundColor: 'rgba(var(--foreground-rgb), 0.08)', borderColor: 'rgba(var(--foreground-rgb), 0.3)' }}>
             <div className="flex items-center space-x-2">
               <FiCode className="text-green-400" size={18} />
-              <span className="text-[color:rgba(0,0,0,0.65)] dark:text-gray-300">Community-driven development</span>
+              <span className="text-[var(--foreground)]">Community-driven development</span>
             </div>
-            <div className="hidden sm:block w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"></div>
-            <span className="text-[color:rgba(0,0,0,0.65)] dark:text-gray-300">Transparent & extensible</span>
-            <div className="hidden sm:block w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"></div>
-            <span className="text-[color:rgba(0,0,0,0.65)] dark:text-gray-300">MIT Licensed</span>
+            <div className="hidden sm:block w-1 h-1 bg-[var(--foreground)]/40 rounded-full"></div>
+            <span className="text-[var(--foreground)]">Transparent & extensible
+            </span>
+            <div className="hidden sm:block w-1 h-1 bg-[var(--foreground)]/40 rounded-full"></div>
+            <span className="text-[var(--foreground)]">MIT Licensed</span>
           </div>
         </div>
 
@@ -196,9 +237,7 @@ const FeaturesSection = () => {
               <div className="hidden md:flex items-center space-x-4">
                 <button
                   onClick={prevSlide}
-                  className="flex items-center justify-center w-16 h-16  bg-[color:rgba(0,0,0,0.06)] dark:bg-gray-800/70
-                  hover:bg-[color:rgba(0,0,0,0.1)] dark:hover:bg-gray-700/70
-                  border border-[color:rgba(0,0,0,0.12)] dark:border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30"
+                  className="flex items-center justify-center w-16 h-16 dark:bg-gray-800/70 dark:hover:bg-gray-700/70 dark:border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30"
                 >
                   <FiChevronLeft className="text-[color:rgba(0,0,0,0.65)] dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors" size={24} />
                 </button>
@@ -212,7 +251,7 @@ const FeaturesSection = () => {
                       border border-[color:rgba(0,0,0,0.08)] dark:border-gray-700/40
                       rounded-2xl p-6 cursor-pointer
                       hover:scale-105 transition-all duration-500
-                      opacity-60 hover:opacity-80"
+                      opacity-75 hover:opacity-90"
                       onClick={prevSlide}
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${features[(currentIndex - 1 + features.length) % features.length].gradient} flex items-center justify-center mb-4`}>
@@ -223,7 +262,7 @@ const FeaturesSection = () => {
                       <h4 className="text-lg font-bold text-[var(--foreground)] mb-2">
                         {features[(currentIndex - 1 + features.length) % features.length].title}
                       </h4>
-                      <p className="text-sm text-[color:rgba(0,0,0,0.55)] dark:text-gray-400 line-clamp-3">
+                      <p className="text-sm text-[color:rgba(var(--foreground-rgb),0.8)] line-clamp-3">
                         {features[(currentIndex - 1 + features.length) % features.length].description}
                       </p>
                     </div>
@@ -233,13 +272,12 @@ const FeaturesSection = () => {
 
               {/* Center Card */}
               <div className="relative z-20 w-full max-w-2xl mx-auto px-4 flex items-center justify-center">
-                <div className="bg-[color:rgba(255,255,255,0.7)] dark:bg-gradient-to-br dark:from-gray-800/60 dark:to-gray-900/60 backdrop-blur-2xl 
-                border border-[color:rgba(0,0,0,0.12)] dark:border-gray-600/50 rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transform transition-all duration-700 w-full my-4 md:my-0">
+                <div className=" bg-gradient-to-br from-gray-600/25 to-gray-900/50 backdrop-blur-2xl border-gray-600/50 rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transform transition-all duration-700 w-full my-4 md:my-0">
                   {/* Current feature content */}
                   <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center space-x-2 mb-2 sm:mb-3">
                       <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${features[currentIndex].gradient}`}></div>
-                      <span className="text-xs sm:text-sm font-semibold text-[color:rgba(0,0,0,0.55)] dark:text-gray-400 uppercase tracking-wider">
+                      <span className="text-xs sm:text-sm font-semibold text-[var(--foreground)] uppercase tracking-wider">
                         {features[currentIndex].category}
                       </span>
                     </div>
@@ -255,7 +293,7 @@ const FeaturesSection = () => {
                       {features[currentIndex].title}
                     </h3>
 
-                    <p className="text-base sm:text-lg text-[color:rgba(0,0,0,0.65)] dark:text-gray-300 leading-relaxed mb-4 sm:mb-6 max-w-lg mx-auto px-2 sm:px-0">
+                    <p className="text-base sm:text-lg text-[var(--foreground)]/80 leading-relaxed mb-4 sm:mb-6 max-w-lg mx-auto px-2 sm:px-0">
                       {features[currentIndex].detailedDescription}
                     </p>
 
@@ -264,7 +302,7 @@ const FeaturesSection = () => {
                       {features[currentIndex].benefits.map((benefit, idx) => (
                         <div key={idx} className="flex items-center justify-center space-x-2 bg-[color:rgba(0,0,0,0.05)] dark:bg-gray-700/30 rounded-xl px-2 sm:px-3 py-1.5 sm:py-2">
                           <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${features[currentIndex].gradient}`}></div>
-                          <span className="text-xs sm:text-sm text-[color:rgba(0,0,0,0.65)] dark:text-gray-300 font-medium">{benefit}</span>
+                          <span className="text-xs sm:text-sm text-[var(--foreground)]/80 font-medium">{benefit}</span>
                         </div>
                       ))}
                     </div>
@@ -289,7 +327,7 @@ const FeaturesSection = () => {
                     <div
                       className="w-64 h-80 
                       bg-[color:rgba(0,0,0,0.04)] dark:bg-gray-800/30 backdrop-blur-xl border border-[color:rgba(0,0,0,0.08)] dark:border-gray-700/40
-                      rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80"
+                      rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-75 hover:opacity-90"
                       onClick={nextSlide}
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${features[(currentIndex + 1) % features.length].gradient} flex items-center justify-center mb-4`}>
@@ -300,7 +338,7 @@ const FeaturesSection = () => {
                       <h4 className="text-lg font-bold text-[var(--foreground)] mb-2">
                         {features[(currentIndex + 1) % features.length].title}
                       </h4>
-                      <p className="text-sm text-[color:rgba(0,0,0,0.55)] dark:text-gray-400 line-clamp-3">
+                      <p className="text-sm text-[color:rgba(var(--foreground-rgb),0.8)] line-clamp-3">
                         {features[(currentIndex + 1) % features.length].description}
                       </p>
                     </div>
@@ -348,11 +386,11 @@ const FeaturesSection = () => {
         <div className="text-center mt-16 mb-16">
           <div className="mb-6">
             <h3 className="text-2xl md:text-3xl font-bold text-[var(--foreground)] mb-4">
-              <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
                 Featured on Product Hunt
               </span>
             </h3>
-            <p className="text-[color:rgba(0,0,0,0.65)] dark:text-gray-300 text-lg max-w-2xl mx-auto">
+            <p className="text-[var(--foreground)]/80 text-lg max-w-2xl mx-auto">
               Show your support and help us reach more users by upvoting BrowsePing on Product Hunt!
             </p>
           </div>
@@ -383,9 +421,9 @@ const FeaturesSection = () => {
               <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/8 dark:from-blue-500/15 to-cyan-500/8 dark:to-cyan-500/15 rounded-full blur-2xl"></div>
             </div>
 
-            <div className="relative bg-[color:rgba(255,255,255,0.75)] 
-            dark:bg-gradient-to-br dark:from-gray-800/60 dark:to-gray-900/60
-            backdrop-blur-2xl border border-[color:rgba(0,0,0,0.12)] dark:border-green-500/30 rounded-3xl p-6 lg:p-8 xl:p-10 shadow-2xl">
+            <div className="relative backdrop-blur-2xl rounded-3xl p-6 lg:p-8 xl:p-10 shadow-2xl border"
+            style={{ backgroundColor: 'rgba(var(--foreground-rgb), 0.08)',borderColor: 'rgba(var(--foreground-rgb), 0.3)',
+            }} >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
                 {/* Content section */}
                 <div className="text-center lg:text-left flex-1">
@@ -394,14 +432,14 @@ const FeaturesSection = () => {
                       <FiGithub className="text-white" size={24} />
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold text-[var(--foreground)]">
-                      <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-green-700 via-teal-800 to-indigo-600 bg-clip-text text-transparent">
                         Open Source
                       </span>
-                      {' '}Community
+                      <span className="bg-gradient-to-r from-indigo-600 to-purple-400 bg-clip-text text-transparent ml-2">Community</span>
                     </h3>
                   </div>
 
-                  <p className="text-base lg:text-lg text-[color:rgba(0,0,0,0.65)] dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  <p className="lg:text-lg text-[var(--foreground)]/80 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     Join developers building the future of social browsing. Contribute and help shape the project.
                   </p>
                 </div>
@@ -422,7 +460,6 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

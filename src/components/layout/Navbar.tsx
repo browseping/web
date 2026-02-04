@@ -41,25 +41,30 @@ const Navbar = () => {
 =======
     <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
       scrolled 
-        ? 'bg-[var(--background)]/95 backdrop-blur-lg border-b border-black/10 dark:border-white/10' 
+        ? 'bg-white/90 dark:bg-gray-900/80 backdrop-blur-lg border-b border-black/10 dark:border-white/10' 
         : 'bg-transparent'
     }`}>
+<<<<<<< HEAD
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-[var(--foreground)]">
 >>>>>>> 889ec75 (Added Light theme toggle to the wesbite and some UI polish)
+=======
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 ease-out group-hover:-rotate-[12deg] group-hover:scale-110 group-hover:shadow-xl">
-              <span className="text-white text-xl font-bold">BP</span>
+              <span className="text-[var(--foreground)] text-xl font-bold">BP</span>
             </div>
             <div>
               <span className="gradient-text text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                 BrowsePing
               </span>
-              <div className="text-xs text-gray-400 -mt-1">Socialize Your Browsing</div>
+              <div className="text-xs -mt-1">Socialize Your Browsing</div>
             </div>
           </Link>
 
+<<<<<<< HEAD
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -75,13 +80,36 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+=======
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => {
+              const isActive = currentpath === item.href;
+              const isHome = item.href === '/';
+              const isHomeActive = isHome && currentpath === '/';
+
+            return (  
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`nav-link flex items-center space-x-1 transition-all duration-200 font-medium relative group 
+          ${isHomeActive ? 'text-yellow-600' : isActive }`}
+            >
+              {item.icon}
+              <span>{item.label}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            );
+          })}
+        </div>
+>>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
 
           {/* Action Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
-                className="p-3 rounded-xl text-gray-300 hover:text-yellow-400 transition-all duration-200 hover:rotate-[20deg] hover:scale-125"
+                className="p-3 rounded-xl transition-all duration-200 hover:rotate-[20deg] hover:scale-125" style={{ color: 'rgba(var(--foreground-rgb), 0.7)' }}
               >
               {isDark ? <FiSun size={22} /> : <FiMoon size={22} />}
               </button>
@@ -89,10 +117,15 @@ const Navbar = () => {
               href="https://github.com/browseping"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 group"
+              className="flex items-center space-x-2 px-4 py-2 text-[var(--foreground)]/90 hover:text-blue-400 border border-gray-600 hover:border-blue-400 rounded-xl transition-all duration-300 font-medium hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 group"
             >
+<<<<<<< HEAD
               <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <span>Contribute</span>
+=======
+              <FiGithub size={16} className="group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-bold">Contribute</span>
+>>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
             </a>
             <Link
               href="/download"
@@ -108,9 +141,13 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+<<<<<<< HEAD
               className="text-gray-300 hover:text-blue-400 transition-colors p-2"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
+=======
+              className="text-[var(--foreground)]/70 hover:text-blue-400 transition-colors p-2"
+>>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
             >
               {isMenuOpen ? <FiX size={24} aria-hidden="true" /> : <FiMenu size={24} aria-hidden="true" />}
             </button>
@@ -125,8 +162,14 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
+<<<<<<< HEAD
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${currentpath === item.href ? 'text-yellow-400' : 'text-gray-300 hover:text-blue-400 hover:bg-gray-800/50'
                     }`}
+=======
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md transition-colors ${
+                    currentpath === item.href ? 'text-yellow-400' : 'text-[var(--foreground)]/70 hover:text-blue-400 hover:bg-gray-800/50'
+                  }`}
+>>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.icon}
@@ -137,7 +180,7 @@ const Navbar = () => {
                 href="https://github.com/browseping"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2"
+                className="flex items-center space-x-2 px-3 py-2 text-[var(--foreground)]/70 hover:text-blue-400 hover:bg-gray-800/50 rounded-md transition-colors border border-gray-600 mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <FiGithub size={16} aria-hidden="true" />
