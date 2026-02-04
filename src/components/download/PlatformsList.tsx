@@ -152,9 +152,9 @@ const PlatformsList = () => {
                   <h3 className="text-2xl font-bold text-white mb-2">{platform.name}</h3>
                   <p className="text-white/80 mb-4 text-sm">{platform.description}</p>
                   <div className="flex items-center justify-center space-x-2 text-white">
-                    <FiDownload size={18} />
+                    <FiDownload size={18} aria-hidden="true" />
                     <span className="font-semibold">Install Now</span>
-                    <FiExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <FiExternalLink size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </div>
                 </div>
               </Link>
@@ -166,7 +166,7 @@ const PlatformsList = () => {
         <div className={`mt-16 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
           <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 max-w-2xl mx-auto">
-            <FiGlobe className="text-blue-400 mx-auto mb-4" size={32} />
+            <FiGlobe className="text-blue-400 mx-auto mb-4" size={32} aria-hidden="true" />
             <h3 className="text-xl font-semibold text-white mb-2">Prefer Manual Installation?</h3>
             <p className="text-gray-300 mb-4">
               Download the extension as a ZIP file and install it manually for more control over the installation process.

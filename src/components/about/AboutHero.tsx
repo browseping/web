@@ -20,30 +20,26 @@ const AboutHero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <div className={`inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <FiHeart className="text-blue-400" size={16} />
+          <div className={`inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+            <FiHeart className="text-blue-400" size={16} aria-hidden="true" />
             <span className="text-blue-300 text-sm font-medium">Our Story</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-            <span className={`block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
+            <span className={`block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
               Redefining the
             </span>
-            <span className={`block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-1000 delay-500 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
+            <span className={`block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}>
               Browsing Experience
             </span>
           </h1>
 
-          <p className={`text-xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            BrowsePing was born from a simple idea: browsing the web shouldn&apos;t be a lonely activity. 
+          <p className={`text-xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}>
+            BrowsePing was born from a simple idea: browsing the web shouldn&apos;t be a lonely activity.
             We&apos;re building a bridge between the digital world and social connection.
           </p>
 
@@ -57,7 +53,7 @@ const AboutHero = () => {
             ].map((stat, index) => (
               <div key={index} className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 p-6 rounded-2xl hover:border-blue-500/30 transition-colors group hover:cursor-pointer">
                 <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                  <stat.icon className="text-blue-400" size={24} />
+                  <stat.icon className="text-blue-400" size={24} aria-hidden="true" />
                 </div>
                 <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>

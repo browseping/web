@@ -39,7 +39,7 @@ const AboutValues = () => {
           {values.map((value, index) => (
             <div key={index} className="flex items-start space-x-6 p-8 bg-gray-800/30 rounded-3xl border border-gray-700/50 hover:bg-gray-800/50 transition-all duration-300 houver:cursor-pointer">
               <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center border border-blue-500/20">
-                <value.icon className="text-blue-400" size={28} />
+                <value.icon className="text-blue-400" size={28} aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>

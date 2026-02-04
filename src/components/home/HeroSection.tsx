@@ -114,60 +114,84 @@ const HeroSection = () => {
             . Connect with friends, share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
           </p>
 
-          {/* Key Features */}
-          <div className={`flex flex-wrap justify-center items-center gap-8 mb-12 allow-colors transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-            {[
-              { icon: FiGithub, text: 'Open Source', color: 'text-green-500' },
-              { icon: FiUsers, text: 'Social Presence', color: 'text-blue-600' },
-              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-600' },
-              { icon: FiShield, text: 'Privacy First', color: 'text-purple-500' }
-            ].map((feature, index) => (
-              <div key={index} className="flex items-center space-x-2 group cursor-pointer transition-transform duration-200
-              hover:scale-[1.1]">
-                <div className="p-2 rounded-lg bg-[color:color-mix(in srgb, var(--foreground) 12%, transparent)] group-hover:bg-[color:color-mix(in srgb, var(--foreground) 18%, transparent)] transition-colors">
-                  <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} />
-                </div>
-                <span className="transition-colors" style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}>{feature.text}</span>
-              </div>
-            ))}
-          </div>
+             {/* Key Features */}
+<div
+  className={`flex flex-wrap justify-center items-center gap-8 mb-12 transition-all duration-1000 delay-900 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+  }`}
+>
+  {[
+    { icon: FiGithub, text: 'Open Source', color: 'text-green-500' },
+    { icon: FiUsers, text: 'Social Presence', color: 'text-blue-600' },
+    { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-600' },
+    { icon: FiShield, text: 'Privacy First', color: 'text-purple-500' },
+  ].map((feature, index) => (
+    <div
+      key={index}
+      className="flex items-center space-x-2 cursor-pointer transition-transform duration-200 hover:scale-110"
+    >
+      <div
+        className="p-2 rounded-lg transition-colors"
+        style={{ backgroundColor: 'rgba(var(--foreground-rgb), 0.12)' }}
+      >
+        <feature.icon
+          className={`${feature.color} transition-transform`}
+          size={20}
+          aria-hidden="true"
+        />
+      </div>
 
-          {/* CTA Buttons with browser detection */}
-          <div className={`flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-            {detectedBrowser ? (
-              <a
-                href={detectedBrowser.downloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`bg-gradient-to-r ${detectedBrowser.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden`}
-              >
-                <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700" />
-                <FiDownload size={20} className="group-hover:animate-bounce" />
-                <span>Download for {detectedBrowser.name}</span>
-                <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            ) : (
-              <Link
-                href="/download"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center space-x-3 group relative overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700" />
-                <FiDownload size={20} className="group-hover:animate-bounce" />
-                <span>Choose Your Browser</span>
-                <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            )}
+      <span style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}>
+        {feature.text}
+      </span>
+    </div>
+  ))}
+</div>     
+  
+         {/* CTA Buttons with browser detection */}
+<div
+  className={`flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 transition-all duration-1000 delay-1100 ${
+    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+  }`}
+>
+  {detectedBrowser ? (
+    <a
+      href={detectedBrowser.downloadUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`bg-gradient-to-r ${detectedBrowser.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl flex items-center space-x-3 group relative overflow-hidden`}
+    >
+      <div className="absolute inset-0 bg-white/20 -translate-x-full skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
+      <FiDownload size={20} aria-hidden="true" />
+      <span>Download for {detectedBrowser.name}</span>
+      <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+    </a>
+  ) : (
+    <Link
+      href="/download"
+      className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-2xl flex items-center space-x-3 group relative overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-white/20 -translate-x-full skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
+      <FiDownload size={20} aria-hidden="true" />
+      <span>Choose Your Browser</span>
+      <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+    </Link>
+  )}
 
-            <Link
-              href="/download"
-              className="border-2 border-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 flex items-center space-x-3 group backdrop-blur-sm bg-gray-600/40 hover:bg-gray-700/50" style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}
-            >
-              <FiDownload size={20} className="group-hover:rotate-12 transition-transform" />
-              <span>All Download Options</span>
-            </Link>
-          </div>
+  <Link
+    href="/download"
+    className="px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-all duration-300 flex items-center space-x-3 backdrop-blur-sm"
+    style={{
+      border: '2px solid rgba(var(--foreground-rgb), 0.4)',
+      backgroundColor: 'rgba(var(--foreground-rgb), 0.08)',
+      color: 'rgba(var(--foreground-rgb), 0.8)',
+    }}
+  >
+    <FiDownload size={20} aria-hidden="true" />
+    <span>All Download Options</span>
+  </Link>
+</div>
+
 
           {/* Product Hunt Badge */}
           <div className={`flex justify-center mb-12 transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
