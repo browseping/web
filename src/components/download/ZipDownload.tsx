@@ -8,6 +8,7 @@ const ZipDownload = () => {
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [isDownloading, setIsDownloading] = useState(false);
 
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -23,6 +24,8 @@ const ZipDownload = () => {
 
     return () => observer.disconnect();
   }, []);
+
+
 
   const handleDownload = () => {
     setIsDownloading(true);
@@ -97,7 +100,7 @@ const ZipDownload = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-1">{feature.title}</h3>
-                    <p className="text-gray-400">{feature.description}</p>
+                    <p className="text-gray-300">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -119,13 +122,13 @@ const ZipDownload = () => {
                 {/* Download progress */}
                 {isDownloading && (
                   <div className="mb-6">
-                    <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
+                    <div className="w-full bg-gray-700 rounded-full h-2 mb-2 overflow-hidden">
                       <div
                         className="bg-gradient-to-r from-green-400 to-blue-400 h-2 rounded-full transition-all duration-300"
                         style={{ width: `${downloadProgress}%` }}
                       ></div>
                     </div>
-                    <p className="text-sm text-gray-400">Downloading... {downloadProgress}%</p>
+                    <p className="text-sm text-gray-300">Downloading... {downloadProgress}%</p>
                   </div>
                 )}
 
@@ -140,7 +143,7 @@ const ZipDownload = () => {
                   </span>
                 </button>
 
-                <p className="text-sm text-gray-400 mt-4">
+                <p className="text-sm text-gray-300 mt-4">
                   Size: ~2.5 MB • Compatible with all browsers
                 </p>
               </div>

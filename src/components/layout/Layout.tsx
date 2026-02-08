@@ -13,7 +13,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="min-h-screen flex flex-col bg-gray-900 relative">
       <MouseFollower />
       <AnimatedBackground />
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main className="flex-grow relative z-10">
         {children}
       </main>
