@@ -123,12 +123,10 @@ const ZipDownload = () => {
                 {isDownloading && (
                   <div className="mb-6">
                     <div className="w-full bg-gray-700 rounded-full h-2 mb-2 overflow-hidden">
-                      <progress
-                        className="w-full h-2 bg-gradient-to-r from-green-400 to-blue-400 rounded-full transition-all duration-300"
-                        value={downloadProgress}
-                        max="100"
-                        aria-label="Download progress"
-                      />
+                      <div
+                        className="bg-gradient-to-r from-green-400 to-blue-400 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${downloadProgress}%` }}
+                      ></div>
                     </div>
                     <p className="text-sm text-gray-300">Downloading... {downloadProgress}%</p>
                   </div>
