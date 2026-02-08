@@ -193,17 +193,19 @@ const FeaturesSection = () => {
               {/* Navigation Button */}
               <div className="hidden md:flex items-center space-x-4">
                 <button
+                  type="button"
                   onClick={prevSlide}
                   className="flex items-center justify-center w-16 h-16 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                   aria-label="Previous feature"
                 >
-                  <FiChevronLeft className="text-gray-300 group-hover:text-white transition-colors" size={24} />
+                  <FiChevronLeft className="text-gray-300 group-hover:text-white transition-colors" size={24} aria-hidden="true" />
                 </button>
 
                 {/* Card */}
                 <div className="hidden lg:block">
                   {features[(currentIndex - 1 + features.length) % features.length] && (
                     <button
+                      type="button"
                       className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                       onClick={prevSlide}
                       aria-label={`View ${features[(currentIndex - 1 + features.length) % features.length].title} feature`}
@@ -279,6 +281,7 @@ const FeaturesSection = () => {
                 <div className="hidden lg:block">
                   {features[(currentIndex + 1) % features.length] && (
                     <button
+                      type="button"
                       className="w-64 h-80 bg-gray-800/30 backdrop-blur-xl border border-gray-700/40 rounded-2xl p-6 cursor-pointer hover:scale-105 transition-all duration-500 opacity-60 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                       onClick={nextSlide}
                       aria-label={`View ${features[(currentIndex + 1) % features.length].title} feature`}
@@ -299,11 +302,12 @@ const FeaturesSection = () => {
                 </div>
 
                 <button
+                  type="button"
                   onClick={nextSlide}
                   className="flex items-center justify-center w-16 h-16 bg-gray-800/70 hover:bg-gray-700/70 border border-gray-600/50 rounded-2xl transition-all duration-300 group hover:scale-110 shadow-xl backdrop-blur-xl z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
                   aria-label="Next feature"
                 >
-                  <FiChevronRight className="text-gray-300 group-hover:text-white transition-colors" size={24} />
+                  <FiChevronRight className="text-gray-300 group-hover:text-white transition-colors" size={24} aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -400,7 +404,7 @@ const FeaturesSection = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group w-full sm:w-auto justify-center"
                   >
-                    <FiGithub size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                      <FiGithub size={20} className="group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                     <span>Start Contributing</span>
                   </a>
                 </div>

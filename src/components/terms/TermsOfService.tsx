@@ -206,7 +206,7 @@ const TermsOfService = () => {
           {/* Open Source License */}
           <div id="section-6" className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
-              <FiGithub className="text-gray-300" size={24} />
+              <FiGithub className="text-gray-300" size={24} aria-hidden="true" />
               <span>6. Open Source License</span>
             </h2>
             <div className="space-y-4 text-gray-300">

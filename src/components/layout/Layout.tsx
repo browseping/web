@@ -19,9 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="flex-grow relative z-10">
         {children}
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 };

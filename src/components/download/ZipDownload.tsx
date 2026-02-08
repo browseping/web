@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiDownload, FiArchive, FiFolder, FiCode, FiCheckCircle } from 'react-icons/fi';
 
 const ZipDownload = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [downloadProgress, setDownloadProgress] = useState(0);
   const [isDownloading, setIsDownloading] = useState(false);
-  const progressBarRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,6 +24,8 @@ const ZipDownload = () => {
 
     return () => observer.disconnect();
   }, []);
+
+
 
   const handleDownload = () => {
     setIsDownloading(true);
@@ -120,12 +122,14 @@ const ZipDownload = () => {
                 {/* Download progress */}
                 {isDownloading && (
                   <div className="mb-6">
-                  <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
-                    <div
-                      ref={progressBarRef}
-                      className={`bg-gradient-to-r from-green-400 to-blue-400 h-2 rounded-full transition-all duration-300`}
-                    />
-                  </div>
+                    <div className="w-full bg-gray-700 rounded-full h-2 mb-2 overflow-hidden">
+                      <progress
+                        className="w-full h-2 bg-gradient-to-r from-green-400 to-blue-400 rounded-full transition-all duration-300"
+                        value={downloadProgress}
+                        max="100"
+                        aria-label="Download progress"
+                      />
+                    </div>
                     <p className="text-sm text-gray-300">Downloading... {downloadProgress}%</p>
                   </div>
                 )}
