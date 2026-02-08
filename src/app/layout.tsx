@@ -2,7 +2,6 @@ import BackToTop from "@/components/ui/BackToTop";
 import type { Metadata, Viewport } from "next";
 import React from "react";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/hooks/useTheme";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -64,13 +63,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
-          defaultTheme="system"
-          storageKey="browseping-theme"
-        >
-          {children}
-          <BackToTop />
-        </ThemeProvider>
+        {children}
+        <BackToTop />
       </body>
     </html>
   );
