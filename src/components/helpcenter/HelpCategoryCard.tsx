@@ -1,45 +1,38 @@
-// components/HelpCategoryCard.tsx
-import React, { ReactNode } from 'react';
-import { ArrowRight } from 'lucide-react';
+// components/helpcenter/HelpCategoryCard.tsx
+import React from "react";
 
 interface HelpCategoryCardProps {
-  icon: ReactNode;
+  icon: React.ReactNode;
   title: string;
   description: string;
-  link: string;
-  count: number;
+  count?: number;
   color: string;
 }
 
-export default function HelpCategoryCard({ 
-  icon, 
-  title, 
-  description, 
-  link, 
-  count, 
-  color 
+export default function HelpCategoryCard({
+  icon,
+  title,
+  description,
+  count,
+  color,
 }: HelpCategoryCardProps) {
   return (
-    <a
-      href={link}
-      className="group bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg hover:border-transparent transition-all duration-200"
-    >
-      <div className="flex items-start justify-between mb-4">
-        <div className={`p-3 rounded-lg bg-gradient-to-br ${color}`}>
-          <div className="text-white">{icon}</div>
+    <div className="group relative overflow-hidden rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] cursor-pointer">
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-r ${color}`} />
+      <div className="relative">
+        <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${color} bg-opacity-10 text-white mb-4`}>
+          {icon}
         </div>
-        <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
-          {count} articles
-        </span>
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-lg font-semibold text-white">{title}</h3>
+          {count && (
+            <span className="text-sm text-gray-400 bg-gray-700 px-2 py-1 rounded-full">
+              {count} articles
+            </span>
+          )}
+        </div>
+        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
       </div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <div className="flex items-center text-blue-600 font-medium">
-        <span>View category</span>
-        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-      </div>
-    </a>
+    </div>
   );
 }
