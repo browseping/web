@@ -35,12 +35,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+          <Link href="/" className="flex items-center space-x-3 group min-w-0">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex-shrink-0 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
               <span className="text-white text-xl font-bold">BP</span>
             </div>
-            <div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <div className="min-w-0">
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent truncate">
                 BrowsePing
               </span>
               <div className="text-xs text-gray-400 -mt-1">Socialize Your Browsing</div>
@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-6 lg:space-x-8 overflow-x-auto">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
 
           {/* Action Buttons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-4">
             <a
               href="https://github.com/browseping"
               target="_blank"
@@ -87,6 +87,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-300 hover:text-blue-400 transition-colors p-2"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
