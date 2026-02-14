@@ -63,35 +63,26 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          {/* Badge */}
-<<<<<<< HEAD
-          <div className={`inline-flex items-center space-x-3 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 bg-gray-900/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm border dark:border-black/100 ease-out hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_24px_rgba(255,255,255,0.3)] hover:-translate-y-0.4 transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-            }`}>
-            <FiGithub className="text-green-400" size={18} aria-hidden="true" />
-            <span className="text-green-300 text-sm font-semibold">Open Source</span>
-            <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-            <span className="text-blue-300 text-sm font-medium">Browser Extension</span>
-=======
-          <div
-              className={`inline-flex items-center space-x-3
-                bg-gradient-to-r from-blue-700/22 via-purple-600/25 to-cyan-500/30
-                rounded-full px-6 py-3 mb-8
-                backdrop-blur-sm hover:backdrop-blur-md
-                border border-black/70
-                hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]
-                hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]
-                hover:drop-shadow-[0_0_18px_rgba(0,0,0,0.25)]
-                hover:-translate-y-0.5
-                transition-all duration-300 ease-out
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-              `}
-            >
-            <FiGithub className="text-green-600" size={18} />
-            <span className="text-green-600 text-sm font-semibold">Open Source</span>
-            <div className="w-1 h-1 bg-green-600 rounded-full"></div>
-            <span className="text-yellow-600 text-sm font-medium">Browser Extension</span>
->>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
-          </div>
+{/* Badge */}
+<div
+    className={`inline-flex items-center space-x-3
+      bg-gradient-to-r from-blue-700/22 via-purple-600/25 to-cyan-500/30
+      rounded-full px-6 py-3 mb-8
+      backdrop-blur-sm hover:backdrop-blur-md
+      border border-black/70
+      hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]
+      hover:drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)]
+      hover:drop-shadow-[0_0_18px_rgba(0,0,0,0.25)]
+      hover:-translate-y-0.5
+      transition-all duration-300 ease-out
+      ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+    `}
+  >
+  <FiGithub className="text-green-600" size={18} />
+  <span className="text-green-600 text-sm font-semibold">Open Source</span>
+  <div className="w-1 h-1 bg-green-600 rounded-full"></div>
+  <span className="text-yellow-600 text-sm font-medium">Browser Extension</span>
+</div>
 
           {/* Main Heading */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
@@ -126,26 +117,20 @@ const HeroSection = () => {
           {/* Key Features */}
           <div className={`flex flex-wrap justify-center items-center gap-8 mb-12 allow-colors transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-            {[
-              { icon: FiGithub, text: 'Open Source', color: 'text-green-500' },
-              { icon: FiUsers, text: 'Social Presence', color: 'text-blue-600' },
-              { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-600' },
-              { icon: FiShield, text: 'Privacy First', color: 'text-purple-500' }
-            ].map((feature, index) => (
-<<<<<<< HEAD
-              <div key={index} className="flex items-center space-x-2 group cursor-pointer">
-                <div className="p-2 rounded-lg bg-gray-800/50 group-hover:bg-gray-700/50 transition-colors">
-                  <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} aria-hidden="true" />
-=======
-              <div key={index} className="flex items-center space-x-2 group cursor-pointer transition-transform duration-200
-              hover:scale-[1.1]">
-                <div className="p-2 rounded-lg bg-[color:color-mix(in srgb, var(--foreground) 12%, transparent)] group-hover:bg-[color:color-mix(in srgb, var(--foreground) 18%, transparent)] transition-colors">
-                  <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} />
->>>>>>> 1516597 (Fix UI theming conflicts and restore visual consistency across components)
-                </div>
-                <span className="transition-colors" style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}>{feature.text}</span>
-              </div>
-            ))}
+{[
+  { icon: FiGithub, text: 'Open Source', color: 'text-green-500' },
+  { icon: FiUsers, text: 'Social Presence', color: 'text-blue-600' },
+  { icon: FiBarChart, text: 'Analytics', color: 'text-cyan-600' },
+  { icon: FiShield, text: 'Privacy First', color: 'text-purple-500' }
+].map((feature, index) => (
+  <div key={index} className="flex items-center space-x-2 group cursor-pointer transition-transform duration-200
+  hover:scale-[1.1]">
+    <div className="p-2 rounded-lg bg-[color:color-mix(in srgb, var(--foreground) 12%, transparent)] group-hover:bg-[color:color-mix(in srgb, var(--foreground) 18%, transparent)] transition-colors">
+      <feature.icon className={`${feature.color} group-hover:scale-110 transition-transform`} size={20} />
+    </div>
+    <span className="transition-colors" style={{ color: 'rgba(var(--foreground-rgb), 0.8)' }}>{feature.text}</span>
+  </div>
+))}
           </div>
 
           {/* CTA Buttons with browser detection */}
