@@ -54,7 +54,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-6 lg:space-x-8 overflow-x-auto">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -100,6 +100,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-300 hover:text-blue-400 transition-colors p-2"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
