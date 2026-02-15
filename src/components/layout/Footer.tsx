@@ -1,7 +1,13 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { FiGithub, FiMail, FiHeart, FiTwitter, FiLinkedin } from 'react-icons/fi';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  FiGithub,
+  FiMail,
+  FiHeart,
+  FiTwitter,
+  FiLinkedin,
+} from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,12 +32,15 @@ const Footer = () => {
                 <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   BrowsePing
                 </span>
-                <div className="text-sm text-gray-400">Socialize Your Browsing</div>
+                <div className="text-sm text-gray-400">
+                  Socialize Your Browsing
+                </div>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed text-lg">
-              Transform your solitary browsing into a vibrant social experience. Connect with friends,
-              share your digital presence, and discover what&apos;s capturing everyone&apos;s attention across the web.
+              Transform your solitary browsing into a vibrant social experience.
+              Connect with friends, share your digital presence, and discover
+              what&apos;s capturing everyone&apos;s attention across the web.
             </p>
 
             {/* Product Hunt Badge */}
@@ -54,10 +63,26 @@ const Footer = () => {
 
             <div className="flex space-x-6">
               {[
-                { icon: FiGithub, href: 'https://github.com/browseping', label: 'GitHub' },
-                { icon: FiTwitter, href: 'https://x.com/BrowsePing', label: 'Twitter' },
-                { icon: FiLinkedin, href: 'http://linkedin.com/company/browseping', label: 'LinkedIn' },
-                { icon: FiMail, href: 'mailto:support@browseping.com', label: 'Email' },
+                {
+                  icon: FiGithub,
+                  href: "https://github.com/browseping",
+                  label: "GitHub",
+                },
+                {
+                  icon: FiTwitter,
+                  href: "https://x.com/BrowsePing",
+                  label: "Twitter",
+                },
+                {
+                  icon: FiLinkedin,
+                  href: "http://linkedin.com/company/browseping",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: FiMail,
+                  href: "mailto:support@browseping.com",
+                  label: "Email",
+                },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -65,7 +90,11 @@ const Footer = () => {
                   className="w-12 h-12 bg-gray-800/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:scale-110 group border border-gray-800 hover:border-gray-600"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="group-hover:animate-pulse" aria-hidden="true" />
+                  <social.icon
+                    size={20}
+                    className="group-hover:animate-pulse"
+                    aria-hidden="true"
+                  />
                 </a>
               ))}
             </div>
@@ -76,10 +105,10 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6 text-white">Quick Links</h3>
             <ul className="space-y-4">
               {[
-                { href: '/download', label: 'Download' },
-                { href: '/leaderboard', label: 'Leaderboard' },
-                { href: '/privacy', label: 'Privacy Policy' },
-                { href: '/terms', label: 'Terms of Service' },
+                { href: "/download", label: "Download" },
+                { href: "/leaderboard", label: "Leaderboard" },
+                { href: "/privacy", label: "Privacy Policy" },
+                { href: "/terms", label: "Terms of Service" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -99,9 +128,9 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6 text-white">Support</h3>
             <ul className="space-y-4">
               {[
-                { href: '/help', label: 'Help Center' },
-                { href: '/contact', label: 'Contact Us' },
-                { href: '/about', label: 'About Us' }
+                { href: "/help", label: "Help Center" },
+                { href: "/contact", label: "Contact Us" },
+                { href: "/about", label: "About Us" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -123,7 +152,11 @@ const Footer = () => {
           </div>
           <div className="flex items-center space-x-2 text-gray-400 text-sm mt-4 md:mt-0">
             <span>Made with</span>
-            <FiHeart size={16} className="text-red-500 animate-pulse" aria-hidden="true" />
+            <FiHeart
+              size={16}
+              className="text-red-500 animate-pulse"
+              aria-hidden="true"
+            />
             <span>for better browsing</span>
           </div>
         </div>
