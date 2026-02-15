@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --foreground-rgb: 23, 23, 23;
+  --background-rgb: 255, 255, 255;
 }
 
 @theme inline {
@@ -12,15 +14,66 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --foreground-rgb: 237, 237, 237;
+  --background-rgb: 10, 10, 10;
+}
+
+/* LIGHT MODE BACKGROUND */
+
+/* Light mode background change */
+html:not(.dark) {
+  --hero-bg: linear-gradient(
+    135deg,
+    #f7f9ff 0%,
+    #eef2ff 45%,
+    #ffffff 100%
+  );
+}
+
+/* Dark mode - Orginal */
+html.dark {
+  --hero-bg:
+    radial-gradient(
+      1200px circle at 20% 20%,
+      rgba(88, 101, 242, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px circle at 80% 30%,
+      rgba(168, 85, 247, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #020617 0%,
+      #020617 100%
+    );
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: transparent;
+  color: inherit;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Override hardcoded text colors */
+.theme-root {
+  color: var(--foreground);
+}
+
+/* Makes the sections to use theme background colors */
+section,
+main,
+article,
+header
+{
+  background-color: transparent;
 }
