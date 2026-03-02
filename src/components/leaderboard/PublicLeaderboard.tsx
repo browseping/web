@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FiClock, FiUser, FiRefreshCw, FiAward } from 'react-icons/fi';
+import LeaderboardSkeleton from './LeaderboardSkeleton';
 
 interface LeaderboardUser {
   rank: number;
@@ -28,6 +29,8 @@ const PublicLeaderboard = () => {
     try {
       setLoading(true);
       setError(null);
+      // Artificial delay for visual verification of the skeleton
+      await new Promise(resolve => setTimeout(resolve, 1500));
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       const url = `${apiUrl}/api/leaderboard/public-top`;
       const response = await fetch(url, {
@@ -103,13 +106,7 @@ const PublicLeaderboard = () => {
               Community Leaderboard
             </h2>
           </div>
-
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
-            <div className="flex items-center justify-center space-x-3">
-              <FiRefreshCw className="animate-spin text-blue-400" size={24} aria-hidden="true" />
-              <span className="text-white text-lg">Loading leaderboard...</span>
-            </div>
-          </div>
+          <LeaderboardSkeleton />
         </div>
       </section>
     );
